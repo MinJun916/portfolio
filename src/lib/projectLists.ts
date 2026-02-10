@@ -1,4 +1,4 @@
-import type { ProjectCardProps } from '@/types/projects';
+import type { ProjectCardProps, SideProjectCardProps } from '@/types/projects';
 
 export const projectLists: ProjectCardProps[] = [
   {
@@ -50,30 +50,19 @@ export const projectLists: ProjectCardProps[] = [
   },
 ];
 
-export const sideProjectLists: ProjectCardProps[] = [
+export const sideProjectLists: SideProjectCardProps[] = [
   {
-    title: '포트폴리오 사이트',
-    imageSrc: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80',
-    links: [
-      { type: 'fe', href: 'https://github.com' },
-      { type: 'be', href: '#' },
-      { type: 'demo', href: '#' },
-      { type: 'api', href: '#' },
-    ],
+    title: '디스코드 자동화 봇',
     description:
-      'Next.js와 Tailwind로 만든 개인 포트폴리오입니다. 스냅 스크롤과 반응형 레이아웃을 적용했습니다.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      '팀 프로젝트 과정에서 반복되는 커뮤니케이션과 운영 업무를 자동화하기 위해 직접 설계·개발한 디스코드 봇',
+    techStack: ['TypeScript', 'Discord.js'],
+    repository: 'https://github.com/MinJun916/discord-automated-bot',
   },
   {
-    title: '미니 유틸 앱',
-    imageSrc: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
-    links: [
-      { type: 'fe', href: 'https://github.com' },
-      { type: 'be', href: '#' },
-      { type: 'demo', href: 'https://example.com' },
-      { type: 'api', href: '#' },
-    ],
-    description: '간단한 변환·계산 도구를 모아둔 웹 앱입니다. 클라이언트 사이드만으로 동작합니다.',
-    techStack: ['React', 'Vite', 'TypeScript'],
+    title: '포트폴리오 사이트',
+    description:
+      '나의 문제 해결 방식과 기술적 판단 과정을 효과적으로 전달하기 위해 직접 설계·구현한 개인 포트폴리오 웹사이트',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    repository: 'https://github.com/MinJun916/portfolio',
   },
 ];
