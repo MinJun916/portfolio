@@ -19,43 +19,45 @@ const Footer = () => {
         <div className="flex flex-1 flex-col items-center justify-center text-center">
           <div className="flex w-full max-w-[480px] flex-col items-center gap-6 px-2 sm:gap-8">
             <AnimateInView delay={0} variant="fade-up">
-            <div className="space-y-2 sm:space-y-3">
-              <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
-                Let&apos;s work together
-              </h2>
-              <p className="text-foreground/80 text-sm leading-relaxed sm:text-base md:text-lg">
-                문제의 본질을 이해하고, 운영까지 고려해 설계합니다.
+              <div className="space-y-2 sm:space-y-3">
+                <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
+                  Let&apos;s work together
+                </h2>
+                <p className="text-foreground/80 text-sm leading-relaxed sm:text-base md:text-lg">
+                  문제의 본질을 이해하고, 운영까지 고려해 설계합니다.
+                </p>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                궁금한 점이 있으시면 언제든 편하게 연락주세요.
+                <br />
+                최대한 빠르게 답변 드리겠습니다.
               </p>
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              궁금한 점이 있으시면 언제든 편하게 연락주세요.
-              <br />
-              최대한 빠르게 답변 드리겠습니다.
-            </p>
 
-            <div className="flex w-full max-w-[320px] flex-col items-center gap-4 pt-2">
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="group border-foreground/[0.08] hover:border-foreground/15 flex w-full flex-col items-center gap-2 rounded-xl border bg-white/90 px-4 py-3 text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:px-6 sm:py-4"
-              >
-                <span className="text-foreground flex items-center gap-2 text-sm font-medium">
-                  <MailOutlined className="text-foreground/70" />
-                  이메일 보내기
-                </span>
-                <span className="text-muted-foreground font-mono text-xs">{EMAIL}</span>
-              </button>
-              <a
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-foreground/[0.08] text-foreground hover:border-foreground/15 flex size-14 items-center justify-center rounded-xl border bg-white/90 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-                aria-label="GitHub"
-              >
-                <GithubOutlined className="text-2xl" />
-              </a>
-            </div>
-          </AnimateInView>
+              <div className="grid w-full grid-cols-2 gap-3 pt-2 sm:max-w-[360px] sm:gap-4">
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="border-foreground/[0.08] hover:border-foreground/15 flex flex-col items-center justify-center gap-2 rounded-xl border bg-white/90 py-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:py-6"
+                >
+                  <MailOutlined className="text-foreground/70 text-2xl sm:text-3xl" />
+                  <span className="text-foreground text-sm font-medium">이메일 복사</span>
+                  <span className="text-muted-foreground font-mono text-[10px] sm:text-xs">
+                    {EMAIL}
+                  </span>
+                </button>
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-foreground/[0.08] text-foreground hover:border-foreground/15 flex flex-col items-center justify-center gap-2 rounded-xl border bg-white/90 py-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:py-6"
+                  aria-label="GitHub"
+                >
+                  <GithubOutlined className="text-2xl sm:text-3xl" />
+                  <span className="text-sm font-medium">GitHub</span>
+                  <span className="text-muted-foreground text-[10px] sm:text-xs">프로필 보기</span>
+                </a>
+              </div>
+            </AnimateInView>
           </div>
         </div>
 
