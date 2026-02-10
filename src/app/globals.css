@@ -54,8 +54,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; /* 데스크톱: 애플처럼 섹션마다 딱 걸리는 스냅 */
   scroll-padding-top: 3.5rem; /* 모바일 헤더 높이 */
+}
+
+/* 모바일(터치): 스냅 완화 - 가까울 때만 스냅되어 읽기 편함 */
+@media (pointer: coarse) {
+  html {
+    scroll-snap-type: y proximity;
+  }
 }
 
 @media (min-width: 640px) {
