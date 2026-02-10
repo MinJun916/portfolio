@@ -4,13 +4,15 @@ import AnimateInView from '@/components/AnimateInView';
 const TechStack = () => {
   return (
     <section className="bg-primary-subtle w-full flex-shrink-0 snap-start">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1200px] flex-col justify-center px-6 py-16 sm:px-10">
+      <div className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] flex-col justify-center px-4 py-10 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-16 md:px-10">
         <div className="w-full">
           <AnimateInView delay={0}>
-            <h2 className="text-foreground mb-12 text-2xl font-bold sm:text-3xl">Tech Stack</h2>
+            <h2 className="text-foreground mb-8 text-xl font-bold sm:mb-12 sm:text-2xl md:text-3xl">
+              Tech Stack
+            </h2>
           </AnimateInView>
 
-          <div className="grid grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-x-16 sm:gap-y-12">
             <AnimateInView delay={60}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">

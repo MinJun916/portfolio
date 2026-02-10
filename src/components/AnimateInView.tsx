@@ -8,16 +8,18 @@ type AnimateInViewProps = {
   delay?: number;
   /** 'fade-up' | 'fade' */
   variant?: 'fade-up' | 'fade';
-  /** 루트 마진 (viewport 들어오기 전 트리거). 기본 '0px 0px -80px 0px' */
+  /** 루트 마진 (viewport 들어오기 전 트리거). 기본값은 모바일/데스크톱에서 다름 */
   rootMargin?: string;
   className?: string;
 };
+
+const MOBILE_BREAKPOINT = 640;
 
 const AnimateInView = ({
   children,
   delay = 0,
   variant = 'fade-up',
-  rootMargin = '0px 0px -80px 0px',
+  rootMargin: rootMarginProp,
   className = '',
 }: AnimateInViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,16 +29,20 @@ const AnimateInView = ({
     const el = ref.current;
     if (!el) return;
 
+    const mobile = typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT;
+    const rootMargin = rootMarginProp ?? (mobile ? '0px 0px -10% 0px' : '0px 0px -80px 0px');
+    const threshold = mobile ? 0.02 : 0.1;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
+        setInView(entry.isIntersecting);
       },
-      { rootMargin, threshold: 0.1 },
+      { rootMargin, threshold },
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [rootMargin]);
+  }, [rootMarginProp]);
 
   const baseClass = variant === 'fade-up' ? 'animate-in-view' : 'animate-in-view-fade';
 

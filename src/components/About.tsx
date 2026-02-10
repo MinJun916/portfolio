@@ -2,16 +2,16 @@ import AnimateInView from '@/components/AnimateInView';
 
 const About = () => {
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1200px] flex-shrink-0 snap-start flex-col justify-center px-6 py-16 sm:px-10">
+    <section className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] flex-shrink-0 snap-start flex-col justify-center px-4 py-12 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-16 md:px-10">
       <div className="w-full max-w-[720px]">
         <AnimateInView delay={0}>
-          <h2 className="text-foreground mb-12 text-left text-2xl font-bold sm:text-3xl">
+          <h2 className="text-foreground mb-8 text-left text-xl font-bold sm:mb-12 sm:text-2xl md:text-3xl">
             About me
           </h2>
         </AnimateInView>
-        <div className="flex flex-col gap-8 text-left break-keep">
+        <div className="flex flex-col gap-6 text-left break-keep sm:gap-8">
           <AnimateInView delay={80}>
-            <p className="text-foreground/90 text-base leading-[1.85] sm:text-lg sm:leading-[1.9]">
+            <p className="text-foreground/90 text-[15px] leading-[1.85] sm:text-base md:text-lg md:leading-[1.9]">
               저는 문제를 그대로 받아들이기보다,{' '}
               <strong className="text-foreground font-semibold">
                 왜 이 문제가 발생했는지부터 정의하는
@@ -23,7 +23,7 @@ const About = () => {
             </p>
           </AnimateInView>
           <AnimateInView delay={160}>
-            <p className="text-foreground/90 text-base leading-[1.85] sm:text-lg sm:leading-[1.9]">
+            <p className="text-foreground/90 text-[15px] leading-[1.85] sm:text-base md:text-lg md:leading-[1.9]">
               프로젝트를 진행하며 프론트엔드와 백엔드를 넘나들며 개발했고, 배포·운영 환경까지 직접
               구성해보며{' '}
               <strong className="text-foreground font-semibold">
@@ -37,7 +37,7 @@ const About = () => {
             </p>
           </AnimateInView>
           <AnimateInView delay={240}>
-            <p className="text-foreground/90 text-base leading-[1.85] sm:text-lg sm:leading-[1.9]">
+            <p className="text-foreground/90 text-[15px] leading-[1.85] sm:text-base md:text-lg md:leading-[1.9]">
               또한 팀 프로젝트에서는 개인의 구현 속도보다{' '}
               <strong className="text-foreground font-semibold">
                 팀 전체의 안정성과 합의된 방향성

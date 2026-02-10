@@ -52,7 +52,7 @@ const ProjectCard = ({
   return (
     <Link
       href={href}
-      className="border-border bg-card flex h-full min-h-[560px] flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-95 hover:shadow-md"
+      className="border-border bg-card flex h-full min-h-[420px] flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-95 hover:shadow-md sm:min-h-[500px] md:min-h-[560px]"
     >
       {/* 위: 이미지 영역 */}
       <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0 overflow-hidden">
@@ -68,9 +68,9 @@ const ProjectCard = ({
       </div>
 
       {/* 아래: 텍스트 정보 영역 */}
-      <div className="flex flex-1 flex-col gap-3 p-3 sm:gap-4 sm:p-4">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-foreground text-lg font-bold sm:text-xl">{title}</h2>
+      <div className="flex flex-1 flex-col gap-2.5 p-2.5 sm:gap-3 sm:p-3 md:gap-4 md:p-4">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
+          <h2 className="text-foreground text-base font-bold sm:text-lg md:text-xl">{title}</h2>
           {subtitle && <p className="text-muted-foreground text-sm leading-snug">{subtitle}</p>}
           <div className="flex flex-wrap gap-1.5">
             {LINK_ORDER.map((type) => {
@@ -110,7 +110,7 @@ const ProjectCard = ({
         </div>
 
         {/* 본문: Role, Keywords, 기간 */}
-        <div className="flex flex-1 flex-col justify-start gap-2.5 text-sm sm:gap-4">
+        <div className="flex flex-1 flex-col justify-start gap-2 text-xs sm:gap-2.5 sm:text-sm md:gap-4">
           <div>
             <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
               Role

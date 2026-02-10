@@ -14,16 +14,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary flex min-h-[calc(100vh-4rem)] w-full flex-shrink-0 snap-start flex-col">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-6 py-16 sm:px-10">
+    <footer className="bg-primary flex min-h-[calc(100vh-3.5rem)] w-full flex-shrink-0 snap-start flex-col sm:min-h-[calc(100vh-4rem)]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-4 py-10 sm:px-6 sm:py-16 md:px-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <div className="flex max-w-[480px] flex-col items-center gap-8">
+          <div className="flex w-full max-w-[480px] flex-col items-center gap-6 px-2 sm:gap-8">
             <AnimateInView delay={0} variant="fade-up">
-            <div className="space-y-3">
-              <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
+            <div className="space-y-2 sm:space-y-3">
+              <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
                 Let&apos;s work together
               </h2>
-              <p className="text-foreground/80 text-base leading-relaxed sm:text-lg">
+              <p className="text-foreground/80 text-sm leading-relaxed sm:text-base md:text-lg">
                 문제의 본질을 이해하고, 운영까지 고려해 설계합니다.
               </p>
             </div>
@@ -33,11 +33,11 @@ const Footer = () => {
               최대한 빠르게 답변 드리겠습니다.
             </p>
 
-            <div className="flex flex-col items-center gap-4 pt-2">
+            <div className="flex w-full max-w-[320px] flex-col items-center gap-4 pt-2">
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="group border-foreground/[0.08] hover:border-foreground/15 flex w-full max-w-[320px] flex-col items-center gap-2 rounded-xl border bg-white/90 px-6 py-4 text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                className="group border-foreground/[0.08] hover:border-foreground/15 flex w-full flex-col items-center gap-2 rounded-xl border bg-white/90 px-4 py-3 text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:px-6 sm:py-4"
               >
                 <span className="text-foreground flex items-center gap-2 text-sm font-medium">
                   <MailOutlined className="text-foreground/70" />

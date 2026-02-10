@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <section className="bg-primary flex min-h-[calc(100vh-4rem)] flex-shrink-0 snap-start flex-col items-center justify-center px-6 py-20">
-      <div className="mx-auto flex max-w-[720px] flex-col items-center gap-8 text-center">
+    <section className="bg-primary flex min-h-[calc(100vh-3.5rem)] flex-shrink-0 snap-start flex-col items-center justify-center px-4 py-12 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-20">
+      <div className="mx-auto flex max-w-[720px] flex-col items-center gap-6 text-center sm:gap-8">
         {/* 작게: End-to-end */}
         <p
           className="hero-fade-in text-muted-foreground text-sm font-medium sm:text-base"
@@ -12,7 +12,7 @@ const Hero = () => {
 
         {/* 중심: 3가지 키워드 */}
         <h1
-          className="hero-fade-in text-foreground text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl md:tracking-tighter"
+          className="hero-fade-in text-foreground text-3xl font-semibold tracking-tight sm:text-5xl md:text-6xl md:tracking-tighter"
           style={{ animationDelay: '0.2s' }}
         >
           Problem · Judgment · Operation

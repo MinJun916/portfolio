@@ -77,10 +77,10 @@ const EXPERIENCE_DATA: TimelineItemData[] = [
 const Experience = () => {
   return (
     <section className="w-full flex-shrink-0 snap-start">
-      <div className="mx-auto w-full max-w-[1200px] px-6 py-16 sm:px-10">
+      <div className="mx-auto w-full max-w-[1200px] px-4 py-10 sm:px-6 sm:py-16 md:px-10">
         <div className="mx-auto max-w-3xl">
           <AnimateInView delay={0}>
-            <h2 className="text-foreground mb-10 text-left text-2xl font-bold sm:text-3xl">
+            <h2 className="text-foreground mb-6 text-left text-xl font-bold sm:mb-10 sm:text-2xl md:text-3xl">
               Experience
             </h2>
           </AnimateInView>

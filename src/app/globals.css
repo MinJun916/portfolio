@@ -55,11 +55,18 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 4rem; /* 헤더 h-16 높이만큼 스크롤/스냅 시 여백 */
+  scroll-padding-top: 3.5rem; /* 모바일 헤더 높이 */
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 4rem; /* sm 이상 헤더 h-16 */
+  }
 }
 
 body {
   font-family: var(--font-pretendard);
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
