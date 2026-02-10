@@ -4,6 +4,7 @@ import {
   ProfessionalTimeline,
   type TimelineItemData,
 } from '@/components/ui/timeline2';
+import AnimateInView from '@/components/AnimateInView';
 
 const EXPERIENCE_DATA: TimelineItemData[] = [
   {
@@ -78,14 +79,18 @@ const Experience = () => {
     <section className="w-full flex-shrink-0 snap-start">
       <div className="mx-auto w-full max-w-[1200px] px-6 py-16 sm:px-10">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-foreground mb-10 text-left text-2xl font-bold sm:text-3xl">
-            Experience
-          </h2>
+          <AnimateInView delay={0}>
+            <h2 className="text-foreground mb-10 text-left text-2xl font-bold sm:text-3xl">
+              Experience
+            </h2>
+          </AnimateInView>
+          <AnimateInView delay={80}>
           <ProfessionalTimeline
             data={EXPERIENCE_DATA}
             defaultExpandedIds={EXPERIENCE_DATA.map((d) => d.id)}
             expandMode="multi"
           />
+          </AnimateInView>
         </div>
       </div>
     </section>

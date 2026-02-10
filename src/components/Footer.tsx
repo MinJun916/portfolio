@@ -1,6 +1,7 @@
 'use client';
 
 import { GithubOutlined, MailOutlined } from '@ant-design/icons';
+import AnimateInView from '@/components/AnimateInView';
 import { showToast } from '@/components/Sonner';
 
 const EMAIL = 'ed125248@gmail.com';
@@ -17,6 +18,7 @@ const Footer = () => {
       <div className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-6 py-16 sm:px-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
           <div className="flex max-w-[480px] flex-col items-center gap-8">
+            <AnimateInView delay={0} variant="fade-up">
             <div className="space-y-3">
               <h2 className="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl">
                 Let&apos;s work together
@@ -53,6 +55,7 @@ const Footer = () => {
                 <GithubOutlined className="text-2xl" />
               </a>
             </div>
+          </AnimateInView>
           </div>
         </div>
 

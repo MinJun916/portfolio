@@ -1,13 +1,17 @@
 import TechIcon from '@/components/TechIcon';
+import AnimateInView from '@/components/AnimateInView';
 
 const TechStack = () => {
   return (
     <section className="bg-primary-subtle w-full flex-shrink-0 snap-start">
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1200px] flex-col justify-center px-6 py-16 sm:px-10">
         <div className="w-full">
-          <h2 className="text-foreground mb-12 text-2xl font-bold sm:text-3xl">Tech Stack</h2>
+          <AnimateInView delay={0}>
+            <h2 className="text-foreground mb-12 text-2xl font-bold sm:text-3xl">Tech Stack</h2>
+          </AnimateInView>
 
           <div className="grid grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2">
+            <AnimateInView delay={60}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 Frontend
@@ -24,7 +28,9 @@ const TechStack = () => {
                 <TechIcon iconName="tanstack">TanStack Query</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
 
+            <AnimateInView delay={120}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 Backend
@@ -34,7 +40,9 @@ const TechStack = () => {
                 <TechIcon iconName="expressjs">Express</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
 
+            <AnimateInView delay={180}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 Database
@@ -45,7 +53,9 @@ const TechStack = () => {
                 <TechIcon iconName="mongodb">MongoDB</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
 
+            <AnimateInView delay={240}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 DevOps & Infra
@@ -57,7 +67,9 @@ const TechStack = () => {
                 <TechIcon iconName="aws">AWS</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
 
+            <AnimateInView delay={300}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 Tools
@@ -69,7 +81,9 @@ const TechStack = () => {
                 <TechIcon iconName="github">GitHub</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
 
+            <AnimateInView delay={360}>
             <div>
               <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
                 Other Tools
@@ -80,6 +94,7 @@ const TechStack = () => {
                 <TechIcon iconName="figma">Figma</TechIcon>
               </ul>
             </div>
+            </AnimateInView>
           </div>
         </div>
       </div>
