@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,6 +48,12 @@
 
 @theme {
   --color-primary: #f0eae7;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 4rem; /* 헤더 h-16 높이만큼 스크롤/스냅 시 여백 */
 }
 
 body {
@@ -130,4 +136,20 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-in {
+  animation: hero-fade-in 0.7s ease-out forwards;
+  opacity: 0;
 }
