@@ -48,6 +48,8 @@
 
 @theme {
   --color-primary: #f0eae7;
+  /* primary와 어울리는 연한 웜 톤 (섹션 배경용) */
+  --color-primary-subtle: #f8f6f4;
 }
 
 html {

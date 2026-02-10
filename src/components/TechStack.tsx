@@ -1,0 +1,79 @@
+import TechIcon from '@/components/TechIcon';
+
+const TechStack = () => {
+  return (
+    <section className="bg-primary-subtle w-full flex-shrink-0 snap-start">
+      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1200px] flex-col justify-center px-6 py-16 sm:px-10">
+        <div className="w-full">
+          <h2 className="text-foreground mb-12 text-2xl font-bold sm:text-3xl">Tech Stack</h2>
+
+          <div className="grid grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2">
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                Frontend
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon iconName="typescript">TypeScript</TechIcon>
+                <TechIcon>JavaScript</TechIcon>
+                <TechIcon iconName="html5">HTML5</TechIcon>
+                <TechIcon iconName="css3">CSS3</TechIcon>
+                <TechIcon iconName="tailwindcss">Tailwind CSS</TechIcon>
+                <TechIcon iconName="react">React</TechIcon>
+                <TechIcon iconName="nextjs">Next.js</TechIcon>
+                <TechIcon>Zustand</TechIcon>
+                <TechIcon iconName="tanstack">TanStack Query</TechIcon>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                Backend
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon iconName="nodejs">Node.js</TechIcon>
+                <TechIcon iconName="expressjs">Express</TechIcon>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                Database
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon iconName="prisma">Prisma</TechIcon>
+                <TechIcon iconName="postgresql">PostgreSQL</TechIcon>
+                <TechIcon iconName="mongodb">MongoDB</TechIcon>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                DevOps & Infra
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon iconName="docker">Docker</TechIcon>
+                <TechIcon>Nginx</TechIcon>
+                <TechIcon iconName="ubuntu">Ubuntu</TechIcon>
+                <TechIcon iconName="aws">AWS</TechIcon>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                Tools
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon iconName="notion">Notion</TechIcon>
+                <TechIcon>Discord</TechIcon>
+                <TechIcon iconName="git">Git</TechIcon>
+                <TechIcon iconName="github">GitHub</TechIcon>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TechStack;

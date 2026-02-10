@@ -11,7 +11,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'MinJun Shin',
+  title: '신민준 | Portfolio',
   description: "MinJun Shin's portfolio",
 };
 
