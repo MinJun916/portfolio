@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { memo, useCallback, useState } from "react";
+import React, { memo, useCallback, useState } from 'react';
 
 // Helper components with refined icons
 const ChevronDown = (props: React.SVGProps<SVGSVGElement>) => (
@@ -61,16 +61,16 @@ export const Palette = (props: React.SVGProps<SVGSVGElement>) => (
 // Shadcn-style Badge component
 const Badge = ({
   children,
-  className = "",
-  variant = "default",
+  className = '',
+  variant = 'default',
   ...props
 }: React.HTMLAttributes<HTMLSpanElement> & {
-  variant?: "default" | "secondary" | "outline";
+  variant?: 'default' | 'secondary' | 'outline';
 }) => {
   const variants = {
-    default: "bg-primary text-primary-foreground hover:bg-primary/90",
-    secondary: "bg-primary/20 text-foreground hover:bg-primary/30",
-    outline: "border border-border bg-transparent hover:bg-primary/10",
+    default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+    secondary: 'bg-primary/20 text-foreground hover:bg-primary/30',
+    outline: 'border border-border bg-transparent hover:bg-primary/10',
   };
 
   return (
@@ -96,7 +96,7 @@ export interface TimelineItemData {
   skills: string[];
 }
 
-type ExpandMode = "multi" | "single";
+type ExpandMode = 'multi' | 'single';
 
 interface ProfessionalTimelineProps {
   data: TimelineItemData[];
@@ -107,45 +107,45 @@ interface ProfessionalTimelineProps {
 // --- MOCK DATA ---
 const timelineData: TimelineItemData[] = [
   {
-    id: "prof-exp-1",
-    title: "Senior Frontend Developer",
-    type: "Full-time",
-    duration: "10.2022—Present",
+    id: 'prof-exp-1',
+    title: 'Senior Frontend Developer',
+    type: 'Full-time',
+    duration: '10.2022—Present',
     icon: Code,
     responsibilities: [
-      "Lead development of complex React applications with TypeScript.",
-      "Architect scalable frontend solutions using Next.js and modern tooling.",
-      "Mentor junior developers and conduct code reviews.",
-      "Collaborate with design and backend teams to deliver high-quality products.",
+      'Lead development of complex React applications with TypeScript.',
+      'Architect scalable frontend solutions using Next.js and modern tooling.',
+      'Mentor junior developers and conduct code reviews.',
+      'Collaborate with design and backend teams to deliver high-quality products.',
     ],
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+    skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'GraphQL'],
   },
   {
-    id: "prof-exp-2",
-    title: "UI Design Lead",
-    type: "Full-time",
-    duration: "10.2022—Present",
+    id: 'prof-exp-2',
+    title: 'UI Design Lead',
+    type: 'Full-time',
+    duration: '10.2022—Present',
     icon: Palette,
     responsibilities: [
-      "Ensure UI/UX consistency and high-quality standards.",
-      "Design intuitive, user-focused interfaces aligned with business goals.",
-      "Define and establish a cohesive UI style for the company.",
+      'Ensure UI/UX consistency and high-quality standards.',
+      'Design intuitive, user-focused interfaces aligned with business goals.',
+      'Define and establish a cohesive UI style for the company.',
     ],
-    skills: ["Creativity", "UI/UX Design", "Figma"],
+    skills: ['Creativity', 'UI/UX Design', 'Figma'],
   },
   {
-    id: "prof-exp-3",
-    title: "Frontend Developer",
-    type: "Full-time",
-    duration: "03.2021—09.2022",
+    id: 'prof-exp-3',
+    title: 'Frontend Developer',
+    type: 'Full-time',
+    duration: '03.2021—09.2022',
     icon: Code,
     responsibilities: [
-      "Developed responsive web applications using React and Vue.js.",
-      "Implemented pixel-perfect designs from Figma mockups.",
-      "Optimized application performance and user experience.",
-      "Collaborated in an agile development environment.",
+      'Developed responsive web applications using React and Vue.js.',
+      'Implemented pixel-perfect designs from Figma mockups.',
+      'Optimized application performance and user experience.',
+      'Collaborated in an agile development environment.',
     ],
-    skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
+    skills: ['React', 'Vue.js', 'JavaScript', 'CSS', 'HTML'],
   },
 ];
 
@@ -154,27 +154,20 @@ interface TimelineItemContentProps {
   item: TimelineItemData;
 }
 
-const TimelineItemContent = memo(function TimelineItemContent({
-  item,
-}: TimelineItemContentProps) {
+const TimelineItemContent = memo(function TimelineItemContent({ item }: TimelineItemContentProps) {
   return (
-    <div className="mt-6 space-y-6 animate-in slide-in-from-top-1 duration-200">
+    <div className="animate-in slide-in-from-top-1 mt-6 space-y-6 duration-200">
       <div className="space-y-3">
         {item.responsibilities.map((responsibility, idx) => (
-          <div
-            key={`${item.id}-resp-${idx}`}
-            className="group flex items-start gap-3"
-          >
-            <div className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/70 transition-colors duration-200 group-hover:bg-foreground" />
-            <p className="text-sm leading-relaxed text-foreground">
-              {responsibility}
-            </p>
+          <div key={`${item.id}-resp-${idx}`} className="group flex items-start gap-3">
+            <div className="bg-foreground/70 group-hover:bg-foreground mt-2 size-1.5 shrink-0 rounded-full transition-colors duration-200" />
+            <p className="text-foreground text-sm leading-relaxed">{responsibility}</p>
           </div>
         ))}
       </div>
 
       {item.skills.length > 0 && (
-        <div className="flex flex-wrap gap-2 border-t border-border/60 pt-2">
+        <div className="border-border/60 flex flex-wrap gap-2 border-t pt-2">
           {item.skills.map((skill, skillIdx) => (
             <Badge
               key={`${item.id}-skill-${skillIdx}`}
@@ -188,7 +181,7 @@ const TimelineItemContent = memo(function TimelineItemContent({
     </div>
   );
 });
-TimelineItemContent.displayName = "TimelineItemContent";
+TimelineItemContent.displayName = 'TimelineItemContent';
 
 interface TimelineItemProps {
   item: TimelineItemData;
@@ -197,37 +190,29 @@ interface TimelineItemProps {
   index: number;
 }
 
-const TimelineItem = memo(function TimelineItem({
-  item,
-  expanded,
-  onToggle,
-}: TimelineItemProps) {
+const TimelineItem = memo(function TimelineItem({ item, expanded, onToggle }: TimelineItemProps) {
   const Icon = item.icon;
   const headerId = `timeline-header-${item.id}`;
   const contentId = `timeline-content-${item.id}`;
 
   return (
-    <div className="relative group">
+    <div className="group relative">
       {/* Connecting line */}
-      <div className="absolute left-6 top-14 bottom-0 w-[2px] bg-foreground/20" />
+      <div className="bg-foreground/20 absolute top-14 bottom-0 left-6 w-[2px]" />
 
       {/* Timeline node */}
-      <div className="absolute left-4 top-6 z-10 flex size-4 items-center justify-center rounded-full border-2 border-foreground/50 bg-background transition-all duration-200">
-        <div className="size-2 rounded-full bg-foreground/80 transition-opacity duration-200 group-hover:opacity-100" />
+      <div className="border-foreground/50 bg-background absolute top-6 left-4 z-10 flex size-4 items-center justify-center rounded-full border-2 transition-all duration-200">
+        <div className="bg-foreground/80 size-2 rounded-full transition-opacity duration-200 group-hover:opacity-100" />
       </div>
 
       {/* Main content card */}
-      <div className="ml-12 mb-8">
+      <div className="mb-8 ml-12">
         <div
-          className={`
-          rounded-lg border border-border/60 bg-primary/20
-          transition-all duration-200
-          ${expanded ? "shadow-sm" : "shadow-none hover:shadow-sm"}
-        `}
+          className={`border-border/60 bg-primary/20 rounded-lg border transition-all duration-200 ${expanded ? 'shadow-sm' : 'shadow-none hover:shadow-sm'} `}
         >
           <button
             id={headerId}
-            className="group/button w-full cursor-pointer rounded-t-lg p-6 text-left transition-colors duration-200 hover:bg-primary/30"
+            className="group/button hover:bg-primary/30 w-full cursor-pointer rounded-t-lg p-6 text-left transition-colors duration-200"
             onClick={() => onToggle(item.id)}
             aria-expanded={expanded}
             aria-controls={contentId}
@@ -235,12 +220,10 @@ const TimelineItem = memo(function TimelineItem({
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 space-y-2">
                 <div className="flex items-center gap-3">
-                  <div className="rounded-md bg-primary/50 p-2">
-                    <Icon className="size-4 text-foreground" />
+                  <div className="bg-primary/50 rounded-md p-2">
+                    <Icon className="text-foreground size-4" />
                   </div>
-                  <h3 className="text-base font-semibold text-foreground">
-                    {item.title}
-                  </h3>
+                  <h3 className="text-foreground text-base font-semibold">{item.title}</h3>
                 </div>
 
                 <div className="ml-11 flex items-center gap-3">
@@ -249,14 +232,12 @@ const TimelineItem = memo(function TimelineItem({
                       {item.type}
                     </Badge>
                   ) : null}
-                  <span className="text-xs text-foreground/80">
-                    {item.duration}
-                  </span>
+                  <span className="text-foreground/80 text-xs">{item.duration}</span>
                 </div>
               </div>
 
               <div
-                className={`text-foreground/70 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+                className={`text-foreground/70 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
               >
                 <ChevronDown className="size-4" />
               </div>
@@ -268,7 +249,7 @@ const TimelineItem = memo(function TimelineItem({
               id={contentId}
               role="region"
               aria-labelledby={headerId}
-              className="border-t border-border/60 px-6 pb-6"
+              className="border-border/60 border-t px-6 pb-6"
             >
               <TimelineItemContent item={item} />
             </div>
@@ -278,13 +259,13 @@ const TimelineItem = memo(function TimelineItem({
     </div>
   );
 });
-TimelineItem.displayName = "TimelineItem";
+TimelineItem.displayName = 'TimelineItem';
 
 // --- MAIN TIMELINE ---
 export function ProfessionalTimeline({
   data,
   defaultExpandedIds,
-  expandMode = "multi",
+  expandMode = 'multi',
 }: ProfessionalTimelineProps) {
   const initial = defaultExpandedIds ?? data.map((item) => item.id);
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set(initial));
@@ -293,7 +274,7 @@ export function ProfessionalTimeline({
     (id: string) => {
       setExpanded((prev) => {
         const next = new Set(prev);
-        if (expandMode === "single") {
+        if (expandMode === 'single') {
           return prev.has(id) ? new Set() : new Set([id]);
         }
         if (next.has(id)) {
@@ -304,7 +285,7 @@ export function ProfessionalTimeline({
         return next;
       });
     },
-    [expandMode]
+    [expandMode],
   );
 
   return (
@@ -326,14 +307,13 @@ export function ProfessionalTimeline({
 export default function TimelinePage2() {
   return (
     <div className="transition-colors duration-300">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
         <header className="mb-12">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 mb-3">
+          <h1 className="mb-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
             Professional Experience
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            A comprehensive overview of my career journey and professional
-            achievements.
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            A comprehensive overview of my career journey and professional achievements.
           </p>
         </header>
 
