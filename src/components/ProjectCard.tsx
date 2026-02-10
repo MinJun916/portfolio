@@ -1,5 +1,6 @@
 import { Github, Globe, Server, type LucideIcon } from 'lucide-react';
 import type { ProjectLink, ProjectCardProps } from '@/types/projects';
+import KeywordChip from '@/components/KeywordChip';
 
 const linkConfig: Record<
   ProjectLink['type'],
@@ -29,13 +30,22 @@ const linkConfig: Record<
 
 const LINK_ORDER: ProjectLink['type'][] = ['fe', 'be', 'demo', 'api'];
 
-const ProjectCard = ({ title, imageSrc, links, description, techStack }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  subtitle,
+  imageSrc,
+  links,
+  role,
+  keywords,
+  period,
+  techStack,
+}: ProjectCardProps) => {
   const linkByType = Object.fromEntries(links.map((l) => [l.type, l.href])) as Partial<
     Record<ProjectLink['type'], string>
   >;
 
   return (
-    <article className="border-border bg-card flex h-full min-h-[620px] flex-col overflow-hidden rounded-lg border shadow-sm">
+    <article className="border-border bg-card flex h-full min-h-[560px] flex-col overflow-hidden rounded-lg border shadow-sm">
       {/* 위: 이미지 영역 */}
       <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0">
         <div
@@ -46,8 +56,9 @@ const ProjectCard = ({ title, imageSrc, links, description, techStack }: Project
 
       {/* 아래: 텍스트 정보 영역 */}
       <div className="flex flex-1 flex-col gap-3 p-3 sm:gap-4 sm:p-4">
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col gap-2">
           <h2 className="text-foreground text-lg font-bold sm:text-xl">{title}</h2>
+          {subtitle && <p className="text-muted-foreground text-sm leading-snug">{subtitle}</p>}
           <div className="flex flex-wrap gap-1.5">
             {LINK_ORDER.map((type) => {
               const config = linkConfig[type];
@@ -83,9 +94,33 @@ const ProjectCard = ({ title, imageSrc, links, description, techStack }: Project
           </div>
         </div>
 
-        <p className="text-foreground/90 line-clamp-4 text-sm leading-relaxed">{description}</p>
+        {/* 본문: Role, Keywords, 기간 */}
+        <div className="flex flex-1 flex-col justify-start gap-2.5 text-sm sm:gap-4">
+          <div>
+            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+              Role
+            </p>
+            <p className="text-foreground/90 leading-snug">{role}</p>
+          </div>
+          <div>
+            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+              Keywords
+            </p>
+            <p className="text-foreground/90 flex flex-wrap gap-1.5 leading-snug">
+              {keywords.map((kw) => (
+                <KeywordChip key={kw} keyword={kw} />
+              ))}
+            </p>
+          </div>
+          <div>
+            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+              기간
+            </p>
+            <p className="text-foreground/90 leading-snug">{period}</p>
+          </div>
+        </div>
 
-        <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
+        <div className="flex flex-wrap gap-1.5 pt-2">
           {techStack.map((tech) => (
             <span
               key={tech}
