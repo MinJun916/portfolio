@@ -15,7 +15,7 @@ const SideProjectCard = ({ title, description, techStack, repository }: SideProj
                 href={repository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[10px] font-medium transition-colors sm:text-xs bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                className="bg-secondary text-secondary-foreground hover:bg-secondary/80 inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[10px] font-medium transition-colors sm:text-xs"
               >
                 <Github className="size-2.5 sm:size-3" />
                 Repository

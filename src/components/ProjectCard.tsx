@@ -1,3 +1,7 @@
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
 import { Github, Globe, Server, type LucideIcon } from 'lucide-react';
 import type { ProjectLink, ProjectCardProps } from '@/types/projects';
 import KeywordChip from '@/components/KeywordChip';
@@ -34,6 +38,7 @@ const ProjectCard = ({
   title,
   subtitle,
   imageSrc,
+  href = '#',
   links,
   role,
   keywords,
@@ -45,13 +50,21 @@ const ProjectCard = ({
   >;
 
   return (
-    <article className="border-border bg-card flex h-full min-h-[560px] flex-col overflow-hidden rounded-lg border shadow-sm">
+    <Link
+      href={href}
+      className="border-border bg-card flex h-full min-h-[560px] flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-95 hover:shadow-md"
+    >
       {/* 위: 이미지 영역 */}
-      <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${imageSrc})` }}
-        />
+      <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0 overflow-hidden">
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-contain object-center"
+          />
+        ) : null}
       </div>
 
       {/* 아래: 텍스트 정보 영역 */}
@@ -63,21 +76,23 @@ const ProjectCard = ({
             {LINK_ORDER.map((type) => {
               const config = linkConfig[type];
               const Icon = config.icon;
-              const href = linkByType[type];
-              const isActive = href && href !== '#';
+              const linkHref = linkByType[type];
+              const isActive = linkHref && linkHref !== '#';
 
               if (isActive) {
                 return (
-                  <a
+                  <span
                     key={type}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium transition-colors sm:px-2.5 sm:py-1 ${config.className}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(linkHref, '_blank', 'noopener,noreferrer');
+                    }}
+                    className={`inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium transition-colors sm:px-2.5 sm:py-1 ${config.className}`}
                   >
                     <Icon className="size-3 sm:size-3.5" />
                     {config.label}
-                  </a>
+                  </span>
                 );
               }
               return (
@@ -131,7 +146,7 @@ const ProjectCard = ({
           ))}
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 
