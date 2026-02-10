@@ -69,6 +69,17 @@ const TechStack = () => {
                 <TechIcon iconName="github">GitHub</TechIcon>
               </ul>
             </div>
+
+            <div>
+              <h3 className="text-foreground mb-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                Other Tools
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                <TechIcon>Final Cut Pro 11</TechIcon>
+                <TechIcon iconName="ps">Adobe Photoshop</TechIcon>
+                <TechIcon iconName="figma">Figma</TechIcon>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
