@@ -20,12 +20,16 @@ const Header = () => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="border-border/60 bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md pt-[env(safe-area-inset-top)]">
+    <header className="border-border/60 bg-background/80 sticky top-0 z-50 w-full border-b pt-[env(safe-area-inset-top)] backdrop-blur-md">
       <div className="mx-auto flex h-14 min-h-14 w-full max-w-[1200px] items-center justify-between px-4 sm:h-16 sm:px-6">
         <Link
-          href="/"
+          href="#"
           className="text-foreground hover:text-foreground/80 text-base font-semibold tracking-tight transition-colors sm:text-lg"
-          onClick={closeMobileMenu}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            closeMobileMenu();
+          }}
         >
           MinJun.
         </Link>
@@ -89,7 +93,7 @@ const Header = () => {
 
       {/* Mobile menu panel */}
       {mobileMenuOpen && (
-        <div className="border-border/60 bg-background/95 absolute left-0 right-0 top-full z-40 border-b px-4 py-4 backdrop-blur-md md:hidden">
+        <div className="border-border/60 bg-background/95 absolute top-full right-0 left-0 z-40 border-b px-4 py-4 backdrop-blur-md md:hidden">
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>

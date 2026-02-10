@@ -2,7 +2,10 @@ import AnimateInView from '@/components/AnimateInView';
 
 const About = () => {
   return (
-    <section className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] flex-shrink-0 snap-start flex-col justify-center px-4 py-12 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-16 md:px-10">
+    <section
+      id="about"
+      className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] flex-shrink-0 snap-start flex-col justify-center px-4 py-12 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-16 md:px-10"
+    >
       <div className="w-full max-w-[720px]">
         <AnimateInView delay={0}>
           <h2 className="text-foreground mb-8 text-left text-xl font-bold sm:mb-12 sm:text-2xl md:text-3xl">

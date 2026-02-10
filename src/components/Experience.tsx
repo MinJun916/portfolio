@@ -85,11 +85,11 @@ const Experience = () => {
             </h2>
           </AnimateInView>
           <AnimateInView delay={80}>
-          <ProfessionalTimeline
-            data={EXPERIENCE_DATA}
-            defaultExpandedIds={EXPERIENCE_DATA.map((d) => d.id)}
-            expandMode="multi"
-          />
+            <ProfessionalTimeline
+              data={EXPERIENCE_DATA}
+              defaultExpandedIds={EXPERIENCE_DATA.map((d) => d.id)}
+              expandMode="multi"
+            />
           </AnimateInView>
         </div>
       </div>

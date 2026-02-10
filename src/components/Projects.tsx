@@ -5,7 +5,7 @@ import AnimateInView from '@/components/AnimateInView';
 
 const Projects = () => {
   return (
-    <section className="bg-primary-subtle w-full flex-shrink-0 snap-start">
+    <section id="projects" className="bg-primary-subtle w-full flex-shrink-0 snap-start">
       <div className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[1200px] flex-col justify-center px-4 py-8 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-10 md:px-8 md:py-12">
         <AnimateInView delay={0}>
           <div className="w-full">
@@ -13,7 +13,8 @@ const Projects = () => {
               Projects
             </h2>
             <p className="text-foreground/80 mb-4 text-left text-xs leading-relaxed sm:mb-6 sm:text-sm md:text-base">
-              풀스택 개발 기술을 활용하여 성능과 UX, 최적화에 중점을 두고 개발한 주요 프로젝트입니다.
+              풀스택 개발 기술을 활용하여 성능과 UX, 최적화에 중점을 두고 개발한 주요
+              프로젝트입니다.
             </p>
           </div>
         </AnimateInView>

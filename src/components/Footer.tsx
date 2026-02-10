@@ -14,7 +14,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary flex min-h-[calc(100vh-3.5rem)] w-full flex-shrink-0 snap-start flex-col sm:min-h-[calc(100vh-4rem)]">
+    <footer
+      id="contact"
+      className="bg-primary flex min-h-[calc(100vh-3.5rem)] w-full flex-shrink-0 snap-start flex-col sm:min-h-[calc(100vh-4rem)]"
+    >
       <div className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-4 py-10 sm:px-6 sm:py-16 md:px-10">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
           <div className="flex w-full max-w-[480px] flex-col items-center gap-6 px-2 sm:gap-8">
