@@ -255,4 +255,83 @@ export const MOVING_SUMMARY = {
       '이후 프로젝트에서도 항상 **"이 선택이 운영 환경에서도 괜찮은가?"**를 기준으로 기술을 판단하고 있습니다.',
     ],
   },
+  techStack: {
+    title: '5. 기술 스택',
+    groups: [
+      {
+        groupTitle: 'Frontend',
+        items: [
+          {
+            name: 'Next.js',
+            icon: 'nextjs',
+            description:
+              '서버 컴포넌트와 SSR을 활용해 초기 로딩 성능을 개선하고, 렌더링 책임을 서버 중심으로 설계하기 위해 선택했습니다.',
+          },
+          {
+            name: 'TypeScript',
+            icon: 'typescript',
+            description:
+              '프론트엔드–백엔드 간 타입 안정성을 확보하고, 협업 과정에서 발생할 수 있는 런타임 오류를 사전에 방지하기 위해 사용했습니다.',
+          },
+          {
+            name: 'TanStack Query',
+            icon: 'reactquery',
+            description:
+              '서버 상태 관리를 구조화하고, 데이터 캐싱·재요청 제어를 통해 클라이언트 성능과 사용자 경험을 개선하기 위해 도입했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Backend',
+        items: [
+          {
+            name: 'Node.js / Express',
+            icon: 'expressjs',
+            description:
+              '경량 구조로 빠르게 API 서버를 설계하고, 미들웨어 기반 확장성과 유연성을 확보하기 위해 선택했습니다.',
+          },
+          {
+            name: 'Prisma',
+            icon: 'prisma',
+            description:
+              '타입 안정성을 유지하면서 데이터베이스 스키마와 애플리케이션 레이어를 명확히 연결하기 위해 사용했습니다.',
+          },
+          {
+            name: 'PostgreSQL',
+            icon: 'postgresql',
+            description:
+              '관계형 데이터 구조와 집계 처리(View, Index 등)를 활용해 복잡한 조회 요구사항을 효율적으로 처리하기 위해 선택했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Infra / DevOps',
+        items: [
+          {
+            name: 'Ubuntu',
+            icon: 'ubuntu',
+            description:
+              '비용을 고려하면서도 실제 운영 환경을 직접 설계해보기 위해 온프레미스 기반 서버 환경을 구축했습니다.',
+          },
+          {
+            name: 'Docker',
+            icon: 'docker',
+            description:
+              '실행 환경을 표준화해 팀원 간 환경 차이를 제거하고, 향후 클라우드 마이그레이션을 대비하기 위해 도입했습니다.',
+          },
+          {
+            name: 'Nginx',
+            icon: 'nginx',
+            description: '리버스 프록시 및 트래픽 관리, 보안 설정을 위해 활용했습니다.',
+          },
+          {
+            name: 'GitHub Actions / GHCR',
+            icon: 'github',
+            description:
+              '코드 변경 시 자동 빌드 및 배포가 이루어지는 CI/CD 파이프라인을 구축해 배포 안정성을 확보했습니다.',
+          },
+        ],
+      },
+    ],
+  },
 };

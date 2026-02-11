@@ -1,4 +1,5 @@
 import { parseBold } from '@/lib/parseBold';
+import ProjectSection from '@/components/projects/ProjectSection';
 
 export type TroubleShootingSection = {
   title: string;
@@ -156,31 +157,30 @@ const ProjectTroubleShooting = ({ troubleShooting }: ProjectTroubleShootingProps
   const { title, cases: caseList } = troubleShooting;
 
   return (
-    <section className="bg-primary-subtle flex min-h-[calc(100dvh-3.5rem)] w-full flex-shrink-0 snap-start snap-always items-start px-4 py-16 sm:min-h-[calc(100dvh-4rem)] sm:px-6 sm:py-20 md:px-10 md:py-24">
-      <div className="mx-auto w-full max-w-6xl text-left">
-        <h2 className="text-foreground mb-12 text-xl font-semibold tracking-tight sm:mb-14 sm:text-2xl md:mb-16 md:text-3xl">
-          {title}
-        </h2>
-
-        <div className="space-y-16 sm:space-y-20">
-          {caseList.map((cas, caseIndex) => {
-            const useZigzag = cas.layout === 'zigzag';
-            return (
-              <div key={caseIndex} className={!useZigzag ? 'w-full max-w-5xl' : undefined}>
-                {useZigzag ? (
-                  <TroubleShootingZigzagCase caseTitle={cas.caseTitle} sections={cas.sections} />
-                ) : (
-                  <TroubleShootingGridCase caseTitle={cas.caseTitle} sections={cas.sections} />
-                )}
-                {caseIndex < caseList.length - 1 && (
-                  <hr className="border-primary-foreground/10 mt-16 sm:mt-20" aria-hidden />
-                )}
-              </div>
-            );
-          })}
-        </div>
+    <ProjectSection
+      title={title}
+      maxWidth="wide"
+      padding="large"
+      titleClassName="mb-12 sm:mb-14 md:mb-16"
+    >
+      <div className="space-y-16 sm:space-y-20">
+        {caseList.map((cas, caseIndex) => {
+          const useZigzag = cas.layout === 'zigzag';
+          return (
+            <div key={caseIndex} className={!useZigzag ? 'w-full max-w-5xl' : undefined}>
+              {useZigzag ? (
+                <TroubleShootingZigzagCase caseTitle={cas.caseTitle} sections={cas.sections} />
+              ) : (
+                <TroubleShootingGridCase caseTitle={cas.caseTitle} sections={cas.sections} />
+              )}
+              {caseIndex < caseList.length - 1 && (
+                <hr className="border-primary-foreground/10 mt-16 sm:mt-20" aria-hidden />
+              )}
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </ProjectSection>
   );
 };
 
