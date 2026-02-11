@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Globe, Server, type LucideIcon } from 'lucide-react';
+import { ChevronRight, Github, Globe, Server, type LucideIcon } from 'lucide-react';
 import type { ProjectLink, ProjectCardProps } from '@/types/projects';
 import KeywordChip from '@/components/home/KeywordChip';
 
@@ -52,98 +52,106 @@ const ProjectCard = ({
   return (
     <Link
       href={href}
-      className="border-border bg-card flex h-full min-h-[420px] flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:opacity-95 hover:shadow-md sm:min-h-[500px] md:min-h-[560px]"
+      className="border-border bg-card group hover:border-foreground/20 focus-visible:ring-ring relative flex h-full min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out outline-none hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 active:translate-y-0 active:scale-[0.99] active:shadow-sm sm:min-h-[500px] md:min-h-[560px]"
+      aria-label={`${title} 상세 보기`}
     >
-      {/* 위: 이미지 영역 */}
-      <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0 overflow-hidden">
-        {imageSrc ? (
-          <Image
-            src={imageSrc}
-            alt=""
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain object-center"
-          />
-        ) : null}
-      </div>
+      <div className="flex min-h-full flex-1 flex-col">
+        {/* 위: 이미지 영역 */}
+        <div className="bg-muted relative aspect-[2/1] w-full flex-shrink-0 overflow-hidden">
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt=""
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-contain object-center"
+            />
+          ) : null}
+        </div>
 
-      {/* 아래: 텍스트 정보 영역 */}
-      <div className="flex flex-1 flex-col gap-2.5 p-2.5 sm:gap-3 sm:p-3 md:gap-4 md:p-4">
-        <div className="flex flex-col gap-1.5 sm:gap-2">
-          <h2 className="text-foreground text-base font-bold sm:text-lg md:text-xl">{title}</h2>
-          {subtitle && <p className="text-muted-foreground text-sm leading-snug">{subtitle}</p>}
-          <div className="flex flex-wrap gap-1.5">
-            {LINK_ORDER.map((type) => {
-              const config = linkConfig[type];
-              const Icon = config.icon;
-              const linkHref = linkByType[type];
-              const isActive = linkHref && linkHref !== '#';
+        {/* 아래: 텍스트 정보 영역 */}
+        <div className="flex flex-1 flex-col gap-2.5 p-2.5 sm:gap-3 sm:p-3 md:gap-4 md:p-4">
+          <div className="flex flex-col gap-1.5 sm:gap-2">
+            <h2 className="text-foreground text-base font-bold sm:text-lg md:text-xl">{title}</h2>
+            {subtitle && <p className="text-muted-foreground text-sm leading-snug">{subtitle}</p>}
+            <div className="flex flex-wrap gap-1.5">
+              {LINK_ORDER.map((type) => {
+                const config = linkConfig[type];
+                const Icon = config.icon;
+                const linkHref = linkByType[type];
+                const isActive = linkHref && linkHref !== '#';
 
-              if (isActive) {
+                if (isActive) {
+                  return (
+                    <span
+                      key={type}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(linkHref, '_blank', 'noopener,noreferrer');
+                      }}
+                      className={`inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium transition-colors sm:px-2.5 sm:py-1 ${config.className}`}
+                    >
+                      <Icon className="size-3 sm:size-3.5" />
+                      {config.label}
+                    </span>
+                  );
+                }
                 return (
                   <span
                     key={type}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.open(linkHref, '_blank', 'noopener,noreferrer');
-                    }}
-                    className={`inline-flex cursor-pointer items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium transition-colors sm:px-2.5 sm:py-1 ${config.className}`}
+                    aria-disabled
+                    className="border-border bg-muted/50 text-muted-foreground inline-flex cursor-default items-center gap-1 rounded-md border px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1"
                   >
                     <Icon className="size-3 sm:size-3.5" />
                     {config.label}
                   </span>
                 );
-              }
-              return (
-                <span
-                  key={type}
-                  aria-disabled
-                  className="border-border bg-muted/50 text-muted-foreground inline-flex cursor-default items-center gap-1 rounded-md border px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1"
-                >
-                  <Icon className="size-3 sm:size-3.5" />
-                  {config.label}
-                </span>
-              );
-            })}
+              })}
+            </div>
           </div>
-        </div>
 
-        {/* 본문: Role, Keywords, 기간 */}
-        <div className="flex flex-1 flex-col justify-start gap-2 text-xs sm:gap-2.5 sm:text-sm md:gap-4">
-          <div>
-            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
-              Role
-            </p>
-            <p className="text-foreground/90 leading-snug">{role}</p>
+          {/* 본문: Role, Keywords, 기간 */}
+          <div className="flex flex-1 flex-col justify-start gap-2 text-xs sm:gap-2.5 sm:text-sm md:gap-4">
+            <div>
+              <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+                Role
+              </p>
+              <p className="text-foreground/90 leading-snug">{role}</p>
+            </div>
+            <div>
+              <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+                Keywords
+              </p>
+              <p className="text-foreground/90 flex flex-wrap gap-1.5 leading-snug">
+                {keywords.map((kw) => (
+                  <KeywordChip key={kw} keyword={kw} />
+                ))}
+              </p>
+            </div>
+            <div>
+              <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
+                기간
+              </p>
+              <p className="text-foreground/90 leading-snug">{period}</p>
+            </div>
           </div>
-          <div>
-            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
-              Keywords
-            </p>
-            <p className="text-foreground/90 flex flex-wrap gap-1.5 leading-snug">
-              {keywords.map((kw) => (
-                <KeywordChip key={kw} keyword={kw} />
-              ))}
-            </p>
-          </div>
-          <div>
-            <p className="text-muted-foreground mb-0.5 text-xs font-semibold tracking-wider uppercase">
-              기간
-            </p>
-            <p className="text-foreground/90 leading-snug">{period}</p>
-          </div>
-        </div>
 
-        <div className="flex flex-wrap gap-1.5 pt-2">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="border-border bg-muted text-muted-foreground rounded-md border px-2 py-0.5 text-xs"
-            >
-              {tech}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-1.5 pt-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="border-border bg-muted text-muted-foreground rounded-md border px-2 py-0.5 text-xs"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-muted-foreground group-hover:text-foreground mt-3 flex items-center gap-1 text-xs font-medium transition-colors sm:mt-4 sm:text-sm">
+            상세 보기
+            <ChevronRight className="size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 sm:size-4" />
+          </p>
         </div>
       </div>
     </Link>
