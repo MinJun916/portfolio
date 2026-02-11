@@ -1,4 +1,3 @@
-import Header from '@/components/shared/Header';
 import Hero from '@/components/home/Hero';
 import About from '@/components/home/About';
 import TechStack from '@/components/home/TechStack';
@@ -9,7 +8,6 @@ import Footer from '@/components/home/Footer';
 const HomePage = () => {
   return (
     <>
-      <Header />
       <Hero />
       <About />
       <TechStack />

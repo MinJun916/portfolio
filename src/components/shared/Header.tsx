@@ -2,6 +2,7 @@
 
 import { GithubOutlined, MailOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Separator } from '@/components/ui/separator';
 import { showToast } from '@/components/shared/Sonner';
 import { useState } from 'react';
@@ -14,8 +15,35 @@ const NAV_LINKS = [
   { href: '#contact', label: 'Contact' },
 ];
 
+const IconLinks = () => (
+  <div className="flex items-center gap-4">
+    <a
+      href="https://github.com/MinJun916"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-muted-foreground hover:text-foreground transition-colors"
+      aria-label="GitHub"
+    >
+      <GithubOutlined className="text-[18px]" />
+    </a>
+    <button
+      type="button"
+      onClick={async () => {
+        await navigator.clipboard.writeText(EMAIL);
+        showToast({ type: 'success', title: '이메일 주소가 복사되었습니다.' });
+      }}
+      className="text-muted-foreground hover:text-foreground transition-colors"
+      aria-label="이메일 주소 복사"
+    >
+      <MailOutlined className="text-[18px]" />
+    </button>
+  </div>
+);
+
 const Header = () => {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isRoot = pathname === '/';
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -23,76 +51,63 @@ const Header = () => {
     <header className="border-border/60 bg-background/80 sticky top-0 z-50 w-full border-b pt-[env(safe-area-inset-top)] backdrop-blur-md">
       <div className="mx-auto flex h-14 min-h-14 w-full max-w-[1200px] items-center justify-between px-4 sm:h-16 sm:px-6">
         <Link
-          href="#"
+          href="/"
           className="text-foreground hover:text-foreground/80 text-base font-semibold tracking-tight transition-colors sm:text-lg"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            closeMobileMenu();
-          }}
+          onClick={
+            isRoot
+              ? (e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  closeMobileMenu();
+                }
+              : closeMobileMenu
+          }
         >
           MinJun.
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 md:flex md:gap-8">
-          <ul className="flex items-center gap-6 md:gap-8">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="h-5">
-            <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
-          </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/MinJun916"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <GithubOutlined className="text-[18px]" />
-            </a>
+        {isRoot ? (
+          <>
+            <nav className="hidden items-center gap-6 md:flex md:gap-8">
+              <ul className="flex items-center gap-6 md:gap-8">
+                {NAV_LINKS.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="h-5">
+                <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
+              </div>
+              <IconLinks />
+            </nav>
             <button
               type="button"
-              onClick={async () => {
-                await navigator.clipboard.writeText(EMAIL);
-                showToast({ type: 'success', title: '이메일 주소가 복사되었습니다.' });
-              }}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="이메일 주소 복사"
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              className="text-foreground flex size-10 items-center justify-center md:hidden"
+              aria-label={mobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+              aria-expanded={mobileMenuOpen}
             >
-              <MailOutlined className="text-[18px]" />
+              {mobileMenuOpen ? (
+                <CloseOutlined className="text-xl" />
+              ) : (
+                <MenuOutlined className="text-xl" />
+              )}
             </button>
+          </>
+        ) : (
+          <div className="flex items-center gap-4">
+            <IconLinks />
           </div>
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen((v) => !v)}
-          className="text-foreground flex size-10 items-center justify-center md:hidden"
-          aria-label={mobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
-          aria-expanded={mobileMenuOpen}
-        >
-          {mobileMenuOpen ? (
-            <CloseOutlined className="text-xl" />
-          ) : (
-            <MenuOutlined className="text-xl" />
-          )}
-        </button>
+        )}
       </div>
 
-      {/* Mobile menu panel */}
-      {mobileMenuOpen && (
+      {isRoot && mobileMenuOpen && (
         <div className="border-border/60 bg-background/95 absolute top-full right-0 left-0 z-40 border-b px-4 py-4 backdrop-blur-md md:hidden">
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map(({ href, label }) => (
