@@ -1,4 +1,5 @@
 import { parseBold } from '@/lib/parseBold';
+import AnimateInView from '@/components/shared/AnimateInView';
 import ProjectSection from '@/components/projects/ProjectSection';
 
 export type TroubleShootingSection = {
@@ -167,16 +168,18 @@ const ProjectTroubleShooting = ({ troubleShooting }: ProjectTroubleShootingProps
         {caseList.map((cas, caseIndex) => {
           const useZigzag = cas.layout === 'zigzag';
           return (
-            <div key={caseIndex} className={!useZigzag ? 'w-full max-w-5xl' : undefined}>
-              {useZigzag ? (
-                <TroubleShootingZigzagCase caseTitle={cas.caseTitle} sections={cas.sections} />
-              ) : (
-                <TroubleShootingGridCase caseTitle={cas.caseTitle} sections={cas.sections} />
-              )}
-              {caseIndex < caseList.length - 1 && (
-                <hr className="border-primary-foreground/10 mt-16 sm:mt-20" aria-hidden />
-              )}
-            </div>
+            <AnimateInView key={caseIndex} delay={caseIndex * 100} variant="fade-up">
+              <div className={!useZigzag ? 'w-full max-w-5xl' : undefined}>
+                {useZigzag ? (
+                  <TroubleShootingZigzagCase caseTitle={cas.caseTitle} sections={cas.sections} />
+                ) : (
+                  <TroubleShootingGridCase caseTitle={cas.caseTitle} sections={cas.sections} />
+                )}
+                {caseIndex < caseList.length - 1 && (
+                  <hr className="border-primary-foreground/10 mt-16 sm:mt-20" aria-hidden />
+                )}
+              </div>
+            </AnimateInView>
           );
         })}
       </div>

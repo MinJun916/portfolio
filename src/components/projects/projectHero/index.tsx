@@ -1,4 +1,5 @@
 import { projectLists } from '@/lib/projectLists';
+import AnimateInView from '@/components/shared/AnimateInView';
 import ProjectHeroSection from './ProjectHeroSection';
 import ProjectHeroHeader from './ProjectHeroHeader';
 import ProjectHeroMeta from './ProjectHeroMeta';
@@ -16,14 +17,18 @@ const ProjectHero = ({ projectName }: ProjectHeroProps) => {
 
   return (
     <ProjectHeroSection>
-      <div className="space-y-8 text-left sm:space-y-10 md:space-y-12">
-        <ProjectHeroHeader title={title} logoSrc={logoSrc ?? imageSrc} links={links} />
-        <p className="text-muted-foreground max-w-[42rem] text-base leading-[1.8] sm:text-lg sm:leading-[1.8]">
-          {subtitle ?? '—'}
-        </p>
-        <ProjectHeroMeta period={period} role={role} techStack={techStack} />
-      </div>
-      <ProjectHeroImage imageSrc={imageSrc} />
+      <AnimateInView delay={0} variant="fade-up">
+        <div className="space-y-8 text-left sm:space-y-10 md:space-y-12">
+          <ProjectHeroHeader title={title} logoSrc={logoSrc ?? imageSrc} links={links} />
+          <p className="text-muted-foreground max-w-[42rem] text-base leading-[1.8] sm:text-lg sm:leading-[1.8]">
+            {subtitle ?? '—'}
+          </p>
+          <ProjectHeroMeta period={period} role={role} techStack={techStack} />
+        </div>
+      </AnimateInView>
+      <AnimateInView delay={120} variant="fade-up">
+        <ProjectHeroImage imageSrc={imageSrc} />
+      </AnimateInView>
     </ProjectHeroSection>
   );
 };
