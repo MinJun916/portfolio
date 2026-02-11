@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Globe, Server, type LucideIcon } from 'lucide-react';
 import type { ProjectLink, ProjectCardProps } from '@/types/projects';
-import KeywordChip from '@/components/KeywordChip';
+import KeywordChip from '@/components/home/KeywordChip';
 
 const linkConfig: Record<
   ProjectLink['type'],

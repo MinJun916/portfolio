@@ -4,7 +4,7 @@ import {
   ProfessionalTimeline,
   type TimelineItemData,
 } from '@/components/ui/timeline2';
-import AnimateInView from '@/components/AnimateInView';
+import AnimateInView from '@/components/shared/AnimateInView';
 
 const EXPERIENCE_DATA: TimelineItemData[] = [
   {

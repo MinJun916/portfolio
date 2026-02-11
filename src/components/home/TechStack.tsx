@@ -1,5 +1,5 @@
-import TechIcon from '@/components/TechIcon';
-import AnimateInView from '@/components/AnimateInView';
+import TechIcon from '@/components/home/TechIcon';
+import AnimateInView from '@/components/shared/AnimateInView';
 
 const TechStack = () => {
   return (

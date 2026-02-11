@@ -1,7 +1,7 @@
-import ProjectCard from '@/components/ProjectCard';
-import SideProjectCard from '@/components/SideProjectCard';
+import ProjectCard from '@/components/home/ProjectCard';
+import SideProjectCard from '@/components/home/SideProjectCard';
 import { projectLists, sideProjectLists } from '@/lib/projectLists';
-import AnimateInView from '@/components/AnimateInView';
+import AnimateInView from '@/components/shared/AnimateInView';
 
 const Projects = () => {
   return (

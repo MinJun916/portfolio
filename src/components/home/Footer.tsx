@@ -1,8 +1,8 @@
 'use client';
 
 import { GithubOutlined, MailOutlined } from '@ant-design/icons';
-import AnimateInView from '@/components/AnimateInView';
-import { showToast } from '@/components/Sonner';
+import AnimateInView from '@/components/shared/AnimateInView';
+import { showToast } from '@/components/shared/Sonner';
 
 const EMAIL = 'ed125248@gmail.com';
 const GITHUB_URL = 'https://github.com/MinJun916';

@@ -1,4 +1,4 @@
-import AnimateInView from '@/components/AnimateInView';
+import AnimateInView from '@/components/shared/AnimateInView';
 
 const About = () => {
   return (

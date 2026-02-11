@@ -1,5 +1,7 @@
+import ProjectMovingPage from '@/components/moving';
+
 const Moving = () => {
-  return <div>Moving</div>;
+  return <ProjectMovingPage />;
 };
 
 export default Moving;
