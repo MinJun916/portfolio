@@ -1,5 +1,5 @@
-import Overview from '@/components/projects/overview';
+import ProjectHero from '@/components/projects/projectHero';
 
-const ProjectDocthroughPage = () => <Overview projectName="docthrough" />;
+const ProjectDocthroughPage = () => <ProjectHero projectName="docthrough" />;
 
 export default ProjectDocthroughPage;

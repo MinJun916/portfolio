@@ -1,5 +1,5 @@
-import Overview from '@/components/projects/overview';
+import ProjectHero from '@/components/projects/projectHero';
 
-const ProjectMovingPage = () => <Overview projectName="moving" />;
+const ProjectMovingPage = () => <ProjectHero projectName="moving" />;
 
 export default ProjectMovingPage;

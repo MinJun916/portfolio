@@ -11,13 +11,13 @@ const linkConfig: Record<ProjectLink['type'], { label: string; icon: typeof Gith
 
 const LINK_ORDER: ProjectLink['type'][] = ['fe', 'be', 'demo', 'api'];
 
-type OverviewHeaderProps = {
+type ProjectHeroHeaderProps = {
   title: string;
   logoSrc?: string;
   links: ProjectLink[];
 };
 
-const OverviewHeader = ({ title, logoSrc, links }: OverviewHeaderProps) => {
+const ProjectHeroHeader = ({ title, logoSrc, links }: ProjectHeroHeaderProps) => {
   const linkByType = Object.fromEntries(links.map((l) => [l.type, l.href])) as Partial<
     Record<ProjectLink['type'], string>
   >;
@@ -61,4 +61,4 @@ const OverviewHeader = ({ title, logoSrc, links }: OverviewHeaderProps) => {
   );
 };
 
-export default OverviewHeader;
+export default ProjectHeroHeader;

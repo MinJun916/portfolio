@@ -1,1 +1,3 @@
-export const MOVING_SUMMARY = ``;
+export const MOVING_SUMMARY = {
+  moving: {},
+};

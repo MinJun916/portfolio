@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-type OverviewImageProps = {
+type ProjectHeroImageProps = {
   imageSrc?: string;
 };
 
-const OverviewImage = ({ imageSrc }: OverviewImageProps) => (
+const ProjectHeroImage = ({ imageSrc }: ProjectHeroImageProps) => (
   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl md:aspect-square md:min-h-[320px]">
     {imageSrc ? (
       <Image
@@ -23,4 +23,4 @@ const OverviewImage = ({ imageSrc }: OverviewImageProps) => (
   </div>
 );
 
-export default OverviewImage;
+export default ProjectHeroImage;
