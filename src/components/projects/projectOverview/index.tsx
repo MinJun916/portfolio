@@ -1,3 +1,5 @@
+import { parseBold } from '@/lib/parseBold';
+
 type ProjectOverviewProps = {
   overview: { title: string; detail: string[] };
 };
@@ -13,7 +15,7 @@ const ProjectOverview = ({ overview }: ProjectOverviewProps) => {
         </h2>
         <div className="text-muted-foreground space-y-5 text-base leading-[1.8] break-keep sm:text-lg sm:leading-[1.85] md:text-[1.0625rem] md:leading-[1.85]">
           {detail.map((para, i) => (
-            <p key={i}>{para}</p>
+            <p key={i}>{parseBold(para)}</p>
           ))}
         </div>
       </div>

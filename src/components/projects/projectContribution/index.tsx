@@ -1,3 +1,5 @@
+import { parseBold } from '@/lib/parseBold';
+
 type ContributionItem = {
   title: string;
   paragraphs: string[];
@@ -32,7 +34,7 @@ const ProjectContribution = ({ contribution }: ProjectContributionProps) => {
                   </h3>
                   <div className="text-muted-foreground space-y-2 text-base leading-[1.8] break-keep sm:leading-[1.85] md:text-[1.0625rem]">
                     {item.paragraphs.map((para, j) => (
-                      <p key={j}>{para}</p>
+                      <p key={j}>{parseBold(para)}</p>
                     ))}
                   </div>
                 </div>
