@@ -7,6 +7,7 @@ export type ProjectCardProps = {
   title: string;
   subtitle?: string;
   imageSrc?: string;
+  logoSrc?: string;
   href?: string;
   links: ProjectLink[];
   role: string;

@@ -5,6 +5,7 @@ export const projectLists: ProjectCardProps[] = [
     title: 'Moving (무빙)',
     subtitle: '이사 전문가와 사용자를 연결하는 매칭 플랫폼',
     imageSrc: '/bg/bg_moving.png',
+    logoSrc: '/logo/logo_moving.png',
     href: '/projects/moving',
     links: [
       { type: 'fe', href: 'https://github.com/fs08-moving-f5/fs08-moving-f5-fe' },
@@ -38,6 +39,7 @@ export const projectLists: ProjectCardProps[] = [
     title: 'Docthrough (독스루)',
     subtitle: '함께 번역하며 배우는 협업형 문서 학습 플랫폼',
     imageSrc: '/bg/bg_docthrough.png',
+    logoSrc: '/logo/logo_docthrough.png',
     href: '/projects/docthrough',
     links: [
       { type: 'fe', href: 'https://github.com/fs08-docthrough-team2/fs08-docthrough-team2-fe' },
@@ -54,6 +56,7 @@ export const projectLists: ProjectCardProps[] = [
     title: '공부의 숲',
     subtitle: '자기주도 학습의 지속성을 높이는 학습 관리 서비스',
     imageSrc: '/bg/bg_studyforest.png',
+    logoSrc: '/logo/logo_studyforest.png',
     href: '/projects/studyforest',
     links: [
       { type: 'fe', href: 'https://github.com/MinJun916/fs08-studyforest-team1-fe' },

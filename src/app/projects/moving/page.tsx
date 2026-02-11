@@ -1,4 +1,4 @@
-import ProjectMovingPage from '@/components/moving';
+import ProjectMovingPage from '@/components/projects/moving';
 
 const Moving = () => {
   return <ProjectMovingPage />;

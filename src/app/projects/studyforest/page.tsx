@@ -1,5 +1,5 @@
-const StudyForest = () => {
-  return <div>StudyForest</div>;
-};
+import ProjectStudyforestPage from '@/components/projects/studyforest';
 
-export default StudyForest;
+export default function StudyforestPage() {
+  return <ProjectStudyforestPage />;
+}

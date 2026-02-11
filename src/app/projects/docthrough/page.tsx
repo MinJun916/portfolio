@@ -1,5 +1,5 @@
-const Docthrough = () => {
-  return <div>Docthrough</div>;
-};
+import ProjectDocthroughPage from '@/components/projects/docthrough';
 
-export default Docthrough;
+export default function DocthroughPage() {
+  return <ProjectDocthroughPage />;
+}
