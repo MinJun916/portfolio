@@ -1,5 +1,6 @@
 import { parseBold } from '@/lib/parseBold';
 import AnimateInView from '@/components/shared/AnimateInView';
+import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from '../constants';
 import ProjectSection from '@/components/projects/ProjectSection';
 
 export type TroubleShootingSection = {
@@ -172,7 +173,7 @@ const ProjectTroubleShooting = ({ troubleShooting }: ProjectTroubleShootingProps
           const useZigzag = cas.layout === 'zigzag';
           return (
             <AnimateInView key={caseIndex} delay={caseIndex * 100} variant="fade-up">
-              <div className={!useZigzag ? 'w-full max-w-5xl' : undefined}>
+              <div className={!useZigzag ? `w-full ${PROJECT_CONTENT_MAX_WIDTH_CLASS}` : undefined}>
                 {useZigzag ? (
                   <TroubleShootingZigzagCase caseTitle={cas.caseTitle} sections={cas.sections} />
                 ) : (

@@ -2,10 +2,13 @@
 
 import Link from 'next/link';
 import AnimateInView from '@/components/shared/AnimateInView';
+import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from '../constants';
 
 const ProjectFooter = () => (
   <footer className="bg-primary flex w-full max-w-full min-w-0 flex-shrink-0 snap-start snap-always flex-col items-center justify-center px-4 py-12 sm:py-16 md:py-20">
-    <div className="mx-auto flex w-full max-w-5xl min-w-0 flex-col items-center gap-8 text-center">
+    <div
+      className={`mx-auto flex w-full min-w-0 flex-col items-center gap-8 text-center ${PROJECT_CONTENT_MAX_WIDTH_CLASS}`}
+    >
       <AnimateInView delay={0} variant="fade-up">
         <Link
           href="/#projects"

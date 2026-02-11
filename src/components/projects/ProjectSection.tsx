@@ -1,10 +1,12 @@
+import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from './constants';
+
 type MaxWidth = 'narrow' | 'default' | 'wide';
 type PaddingVariant = 'default' | 'large';
 
 const MAX_WIDTH_CLASS: Record<MaxWidth, string> = {
   narrow: 'max-w-[42rem]',
-  default: 'max-w-5xl',
-  wide: 'max-w-6xl',
+  default: PROJECT_CONTENT_MAX_WIDTH_CLASS,
+  wide: PROJECT_CONTENT_MAX_WIDTH_CLASS,
 };
 
 const PADDING_CLASS: Record<PaddingVariant, string> = {
@@ -40,7 +42,9 @@ const ProjectSection = ({
   <section
     className={`bg-primary-subtle ${SECTION_BASE} ${PADDING_CLASS[padding]} ${ALIGN_CLASS[align]} ${sectionClassName}`.trim()}
   >
-    <div className={`mx-auto w-full max-w-full min-w-0 ${MAX_WIDTH_CLASS[maxWidth]} text-left`}>
+    <div
+      className={`mx-auto w-full min-w-0 text-left ${maxWidth === 'narrow' ? 'max-w-[42rem]' : PROJECT_CONTENT_MAX_WIDTH_CLASS}`}
+    >
       {title != null && (
         <h2 className={`${TITLE_BASE} mb-6 sm:mb-8 ${titleClassName}`.trim()}>{title}</h2>
       )}
