@@ -1,4 +1,4 @@
-import ProjectStudyforestPage from '@/components/projects/studyforest';
+import ProjectStudyforestPage from '@/views/studyforest';
 
 export default function StudyforestPage() {
   return <ProjectStudyforestPage />;

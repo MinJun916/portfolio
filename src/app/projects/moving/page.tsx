@@ -1,4 +1,4 @@
-import ProjectMovingPage from '@/components/projects/moving';
+import ProjectMovingPage from '@/views/moving';
 
 export default function MovingPage() {
   return <ProjectMovingPage />;

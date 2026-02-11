@@ -1,11 +1,11 @@
 import { parseBold } from '@/lib/parseBold';
 
-type ContributionItem = {
+export type ContributionItem = {
   title: string;
   paragraphs: string[];
 };
 
-type ProjectContributionProps = {
+export type ProjectContributionProps = {
   contribution: {
     title: string;
     items: ContributionItem[];

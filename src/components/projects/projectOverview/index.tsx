@@ -1,6 +1,6 @@
 import { parseBold } from '@/lib/parseBold';
 
-type ProjectOverviewProps = {
+export type ProjectOverviewProps = {
   overview: { title: string; detail: string[] };
 };
 
