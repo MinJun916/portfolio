@@ -41,9 +41,9 @@ const ProjectTechStack = ({ techStack }: ProjectTechStackProps) => {
                 {group.items.map((item, i) => (
                   <li
                     key={i}
-                    className="border-primary-foreground/10 bg-primary-foreground/5 flex flex-col gap-3 rounded-xl border p-4 sm:p-5"
+                    className="border-primary-foreground/10 bg-primary-foreground/5 flex min-w-0 flex-col gap-3 rounded-xl border p-4 sm:p-5"
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex min-w-0 items-center gap-4">
                       {item.icon && (
                         <TechStackIcon
                           icon={item.icon}

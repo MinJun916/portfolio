@@ -23,7 +23,7 @@ export type ProjectSectionProps = {
 };
 
 const SECTION_BASE =
-  'flex min-h-[calc(100dvh-3.5rem)] w-full flex-shrink-0 snap-start snap-always px-4 sm:min-h-[calc(100dvh-4rem)] sm:px-6 md:px-10';
+  'flex min-h-[calc(100dvh-3.5rem)] min-w-0 w-full max-w-full flex-shrink-0 snap-start snap-always overflow-hidden px-4 sm:min-h-[calc(100dvh-4rem)] sm:px-6 md:px-10';
 const TITLE_BASE = 'text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl';
 
 const ALIGN_CLASS = { start: 'items-start', center: 'items-center' } as const;
@@ -40,7 +40,7 @@ const ProjectSection = ({
   <section
     className={`bg-primary-subtle ${SECTION_BASE} ${PADDING_CLASS[padding]} ${ALIGN_CLASS[align]} ${sectionClassName}`.trim()}
   >
-    <div className={`mx-auto w-full ${MAX_WIDTH_CLASS[maxWidth]} text-left`}>
+    <div className={`mx-auto w-full max-w-full min-w-0 ${MAX_WIDTH_CLASS[maxWidth]} text-left`}>
       {title != null && (
         <h2 className={`${TITLE_BASE} mb-6 sm:mb-8 ${titleClassName}`.trim()}>{title}</h2>
       )}

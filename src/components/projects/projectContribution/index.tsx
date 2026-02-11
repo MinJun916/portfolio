@@ -21,9 +21,9 @@ const ProjectContribution = ({ contribution }: ProjectContributionProps) => (
         const isLeft = i % 2 === 0;
         return (
           <AnimateInView key={i} delay={i * 80} variant="fade-up">
-            <div className={`flex justify-start ${!isLeft ? 'sm:justify-end' : ''}`}>
+            <div className={`flex min-w-0 justify-start ${!isLeft ? 'sm:justify-end' : ''}`}>
               <div
-                className={`w-full max-w-[42rem] sm:text-left ${!isLeft ? 'sm:text-right' : ''}`}
+                className={`w-full max-w-[42rem] min-w-0 sm:text-left ${!isLeft ? 'sm:text-right' : ''}`}
               >
                 <h3 className="text-foreground mb-3 text-base font-semibold sm:text-lg">
                   {item.title}

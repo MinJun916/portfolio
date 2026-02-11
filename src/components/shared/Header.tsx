@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <header className="border-border/60 bg-background/80 sticky top-0 z-50 w-full border-b pt-[env(safe-area-inset-top)] backdrop-blur-md">
-      <div className="mx-auto flex h-14 min-h-14 w-full max-w-[1200px] items-center justify-between px-4 sm:h-16 sm:px-6">
+      <div className="mx-auto flex h-14 min-h-14 w-full max-w-[1200px] min-w-0 items-center justify-between px-4 sm:h-16 sm:px-6">
         <Link
           href="/"
           className="text-foreground hover:text-foreground/80 text-base font-semibold tracking-tight transition-colors sm:text-lg"
