@@ -4,6 +4,7 @@ import ProjectContribution from '@/components/projects/projectContribution';
 import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting';
 import ProjectReview from '@/components/projects/projectReview';
 import ProjectTechStack from '@/components/projects/projectTechStack';
+import ProjectFooter from '@/components/projects/projectFooter';
 import { MOVING_SUMMARY } from '@/lib/summary/moving';
 
 const ProjectMovingPage = () => (
@@ -14,6 +15,7 @@ const ProjectMovingPage = () => (
     <ProjectTroubleShooting troubleShooting={MOVING_SUMMARY.troubleShooting} />
     <ProjectReview review={MOVING_SUMMARY.review} />
     <ProjectTechStack techStack={MOVING_SUMMARY.techStack} />
+    <ProjectFooter />
   </>
 );
 
