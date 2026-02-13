@@ -13,7 +13,7 @@ const ProjectFooter = () => (
     >
       <AnimateInView delay={0} variant="fade-up">
         <Link
-          href="/#projects"
+          href="/projects"
           className="text-foreground hover:bg-foreground/10 border-foreground/[0.08] inline-block rounded-xl border bg-white/90 px-6 py-3 text-sm font-medium shadow-sm transition-colors sm:px-8 sm:py-3.5 sm:text-base"
         >
           다른 프로젝트 보러 가기
