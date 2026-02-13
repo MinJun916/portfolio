@@ -7,7 +7,8 @@ const TOC_ITEMS: { id: string; label: string }[] = [
   { id: 'section-contribution', label: '2. 핵심 기여 및 기술적 판단' },
   { id: 'section-trouble-shooting', label: '3. 트러블 슈팅' },
   { id: 'section-review', label: '4. 결과 및 회고' },
-  { id: 'section-tech-stack', label: '5. 기술 스택' },
+  { id: 'section-peer-review', label: '5. 팀원들의 피어 리뷰' },
+  { id: 'section-tech-stack', label: '6. 기술 스택' },
 ];
 
 const ProjectTableOfContents = () => {

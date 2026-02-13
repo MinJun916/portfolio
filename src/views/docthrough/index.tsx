@@ -2,6 +2,7 @@ import ProjectContribution from '@/components/projects/projectContribution';
 import ProjectFooter from '@/components/projects/projectFooter';
 import ProjectHero from '@/components/projects/projectHero';
 import ProjectOverview from '@/components/projects/projectOverview';
+import ProjectPeerReview from '@/components/projects/projectPeerReview';
 import ProjectReview from '@/components/projects/projectReview';
 import ProjectTechStack from '@/components/projects/projectTechStack';
 import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting';
@@ -14,6 +15,7 @@ const ProjectDocthroughPage = () => (
     <ProjectContribution contribution={DOCTHROUGH_SUMMARY.contribution} />
     <ProjectTroubleShooting troubleShooting={DOCTHROUGH_SUMMARY.troubleShooting} />
     <ProjectReview review={DOCTHROUGH_SUMMARY.review} />
+    <ProjectPeerReview projectName="docthrough" />
     <ProjectTechStack techStack={DOCTHROUGH_SUMMARY.techStack} />
     <ProjectFooter />
   </>

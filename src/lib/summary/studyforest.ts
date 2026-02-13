@@ -94,7 +94,7 @@ export const STUDYFOREST_SUMMARY = {
     ],
   },
   techStack: {
-    title: '5. 기술 스택',
+    title: '6. 기술 스택',
     groups: [
       {
         groupTitle: 'Frontend',
