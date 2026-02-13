@@ -1,3 +1,5 @@
+import type { TroubleShootingCase } from '@/components/projects/projectTroubleShooting';
+
 export const STUDYFOREST_SUMMARY = {
   overview: {
     title: '1. 프로젝트 개요',
@@ -41,5 +43,45 @@ export const STUDYFOREST_SUMMARY = {
         ],
       },
     ],
+  },
+  troubleShooting: {
+    title: '3. 트러블 슈팅',
+    cases: [
+      {
+        caseTitle: '마이그레이션 불일치 문제',
+        sections: [
+          {
+            title: '문제',
+            paragraphs: [
+              '로컬 DB와 서버 DB **마이그레이션 상태**가 달라 배포 후 오류가 발생했습니다.',
+            ],
+          },
+          {
+            title: '판단',
+            paragraphs: [
+              '서버 DB에 **실제 데이터가 없음**을 확인했고, **초기화 리스크**가 허용 가능하다고 판단했습니다.',
+            ],
+          },
+          {
+            title: '해결',
+            paragraphs: [
+              '**서버 DB 초기화 → 마이그레이션 재적용 → 시딩 재실행** 순서로 진행했습니다.',
+            ],
+          },
+          {
+            title: '결과',
+            paragraphs: [
+              '짧은 시간 내 정상화했고, **일정 지연 없이** 프로젝트를 완주할 수 있었습니다.',
+            ],
+          },
+          {
+            title: '배운 점',
+            paragraphs: [
+              '이 경험을 통해 배포는 **코드 문제**가 아니라 **"상태 관리 문제"**라는 것을 처음 체감했습니다.',
+            ],
+          },
+        ],
+      },
+    ] satisfies TroubleShootingCase[],
   },
 };
