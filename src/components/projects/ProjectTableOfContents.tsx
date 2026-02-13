@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const TOC_ITEMS: { id: string; label: string }[] = [
@@ -12,7 +13,10 @@ const TOC_ITEMS: { id: string; label: string }[] = [
 ];
 
 const ProjectTableOfContents = () => {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  if (pathname === '/projects') return null;
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
