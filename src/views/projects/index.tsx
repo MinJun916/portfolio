@@ -1,6 +1,7 @@
 import ProjectCard from '@/components/home/ProjectCard';
+import SideProjectCard from '@/components/home/SideProjectCard';
 import AnimateInView from '@/components/shared/AnimateInView';
-import { projectLists } from '@/lib/projectLists';
+import { projectLists, sideProjectLists } from '@/lib/projectLists';
 
 const ProjectsLandingPage = () => {
   return (
@@ -23,6 +24,19 @@ const ProjectsLandingPage = () => {
           {projectLists.map((project, i) => (
             <AnimateInView key={project.title} delay={80 + i * 80}>
               <ProjectCard {...project} />
+            </AnimateInView>
+          ))}
+        </div>
+
+        <AnimateInView delay={0}>
+          <h2 className="text-foreground mt-12 mb-6 text-lg font-bold tracking-tight sm:mt-16 sm:mb-8 sm:text-xl md:text-2xl">
+            Side Project
+          </h2>
+        </AnimateInView>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+          {sideProjectLists.map((project, i) => (
+            <AnimateInView key={project.title} delay={80 + i * 80}>
+              <SideProjectCard {...project} />
             </AnimateInView>
           ))}
         </div>
