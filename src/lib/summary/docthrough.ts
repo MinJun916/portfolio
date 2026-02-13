@@ -147,4 +147,66 @@ export const DOCTHROUGH_SUMMARY = {
       '이후 프로젝트에서는 **"이 기능이 동작하는가?"**보다 **"이 구조가 유지 가능한가?"**를 먼저 질문하며 설계하고 있습니다.',
     ],
   },
+  techStack: {
+    title: '5. 기술 스택',
+    groups: [
+      {
+        groupTitle: 'Frontend',
+        items: [
+          {
+            name: 'Next.js',
+            icon: 'nextjs',
+            description:
+              '페이지 단위 구조화와 SSR 기반 렌더링 전략을 활용해, 초기 설계 단계부터 확장성과 렌더링 책임을 명확히 나누기 위해 선택했습니다.',
+          },
+          {
+            name: 'TypeScript',
+            icon: 'typescript',
+            description:
+              '프론트엔드와 백엔드가 동시에 개발되는 환경에서 타입 불일치로 인한 런타임 오류를 사전에 방지하고, 협업 안정성을 확보하기 위해 도입했습니다.',
+          },
+          {
+            name: 'TanStack Query',
+            icon: 'reactquery',
+            description:
+              '서버 상태를 단순히 fetch하는 것이 아니라, 캐싱·재요청·에러 흐름까지 구조적으로 관리하기 위해 사용했습니다.',
+          },
+          {
+            name: 'Zustand',
+            icon: 'zustand',
+            description:
+              '인증 상태와 사용자 정보를 전역적으로 관리하며, UI 흐름과 상태를 분리해 구조적 일관성을 유지하기 위해 선택했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Network / API Layer',
+        items: [
+          {
+            name: 'Axios (fetch-adapter)',
+            icon: 'axios',
+            description:
+              'Next.js 환경에서 네트워크 요청을 일관되게 관리하면서도, 프레임워크의 렌더링 최적화 특성을 해치지 않도록 구성하기 위해 적용했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Testing / Collaboration',
+        items: [
+          {
+            name: 'Playwright',
+            icon: 'playwright',
+            description:
+              '기능 구현 이후 수동 검증에 의존하지 않기 위해 테스트 자동화를 시도하며, 사용자 흐름 단위의 안정성을 확보하기 위해 도입했습니다.',
+          },
+          {
+            name: 'Git Flow · Husky',
+            icon: 'github',
+            description:
+              '브랜치 전략과 커밋 규칙을 구조화해 협업 과정에서 발생할 수 있는 충돌과 품질 저하를 사전에 방지하기 위해 적용했습니다.',
+          },
+        ],
+      },
+    ],
+  },
 };

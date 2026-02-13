@@ -5,7 +5,9 @@ import type { IconName } from 'tech-stack-icons';
 
 /** 라이브러리 없음, public 커스텀 SVG 경로 */
 const CUSTOM_ICON_SRC: Record<string, string> = {
+  axios: '/techIcon/axios-icon.svg',
   nginx: '/techIcon/nginx-icon.svg',
+  zustand: '/techIcon/zustand-icon.svg',
 };
 
 /** 커스텀도 없을 때 텍스트 폴백용 (소문자) */
