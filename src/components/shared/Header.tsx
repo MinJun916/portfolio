@@ -45,6 +45,7 @@ const Header = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isRoot = pathname === '/';
+  const isProjectDetail = pathname.startsWith('/projects') && pathname !== '/projects';
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -103,6 +104,19 @@ const Header = () => {
           </>
         ) : (
           <div className="flex items-center gap-4">
+            {isProjectDetail && (
+              <>
+                <Link
+                  href="/projects"
+                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                >
+                  프로젝트 목록
+                </Link>
+                <div className="h-5">
+                  <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
+                </div>
+              </>
+            )}
             <IconLinks />
           </div>
         )}
