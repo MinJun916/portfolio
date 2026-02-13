@@ -27,7 +27,12 @@ const ProjectTechStack = ({ techStack }: ProjectTechStackProps) => {
   const { title, groups } = techStack;
 
   return (
-    <ProjectSection title={title} maxWidth="default" titleClassName="mb-10 sm:mb-12">
+    <ProjectSection
+      id="section-tech-stack"
+      title={title}
+      maxWidth="default"
+      titleClassName="mb-10 sm:mb-12"
+    >
       <div className="space-y-12 sm:space-y-14">
         {groups.map((group, groupIndex) => (
           <AnimateInView key={groupIndex} delay={groupIndex * 60} variant="fade-up">

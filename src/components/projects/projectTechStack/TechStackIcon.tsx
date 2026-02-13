@@ -42,7 +42,7 @@ const TechStackIcon = ({ icon, name, variant = 'light' }: TechStackIconProps) =>
   const boxClass = `${ICON_BOX_BASE} ${isCustom || !isFallback ? 'bg-transparent' : 'bg-white shadow-sm dark:bg-white/95'}`;
 
   return (
-    <div className={boxClass} style={{ width: TECH_STACK_ICON_SIZE, height: TECH_STACK_ICON_SIZE }}>
+    <div className={`${boxClass} size-14`}>
       {isCustom ? (
         <Image
           src={CUSTOM_ICON_SRC[icon]}
@@ -54,11 +54,7 @@ const TechStackIcon = ({ icon, name, variant = 'light' }: TechStackIconProps) =>
       ) : isFallback ? (
         <FallbackIconLabel name={name} />
       ) : (
-        <StackIcon
-          name={icon as IconName}
-          variant={variant}
-          style={{ width: TECH_STACK_ICON_SIZE, height: TECH_STACK_ICON_SIZE }}
-        />
+        <StackIcon name={icon as IconName} variant={variant} className="size-14" />
       )}
     </div>
   );

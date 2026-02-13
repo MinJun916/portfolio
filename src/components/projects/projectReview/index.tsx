@@ -7,7 +7,7 @@ export type ProjectReviewProps = {
 };
 
 const ProjectReview = ({ review }: ProjectReviewProps) => (
-  <ProjectSection title={review.title} maxWidth="wide" align="center">
+  <ProjectSection id="section-review" title={review.title} maxWidth="wide" align="center">
     <AnimateInView delay={0} variant="fade-up">
       <div className="text-foreground/80 space-y-5 text-base leading-[1.8] break-keep sm:text-lg sm:leading-[1.85] md:text-[1.0625rem] md:leading-[1.85]">
         {review.detail.map((para, i) => (

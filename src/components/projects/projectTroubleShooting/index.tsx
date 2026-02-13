@@ -162,6 +162,7 @@ const ProjectTroubleShooting = ({ troubleShooting }: ProjectTroubleShootingProps
 
   return (
     <ProjectSection
+      id="section-trouble-shooting"
       title={title}
       maxWidth="wide"
       padding="large"

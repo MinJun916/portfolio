@@ -15,7 +15,12 @@ export type ProjectContributionProps = {
 };
 
 const ProjectContribution = ({ contribution }: ProjectContributionProps) => (
-  <ProjectSection title={contribution.title} maxWidth="wide" titleClassName="mb-8 sm:mb-10">
+  <ProjectSection
+    id="section-contribution"
+    title={contribution.title}
+    maxWidth="wide"
+    titleClassName="mb-8 sm:mb-10"
+  >
     <div className="space-y-12 sm:space-y-14">
       {contribution.items.map((item, i) => {
         const isLeft = i % 2 === 0;

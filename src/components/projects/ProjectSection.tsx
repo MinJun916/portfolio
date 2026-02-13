@@ -16,6 +16,8 @@ const PADDING_CLASS: Record<PaddingVariant, string> = {
 
 export type ProjectSectionProps = {
   title?: string;
+  /** 스크롤/목차용 section id (예: section-overview) */
+  id?: string;
   maxWidth?: MaxWidth;
   align?: 'start' | 'center';
   padding?: PaddingVariant;
@@ -32,6 +34,7 @@ const ALIGN_CLASS = { start: 'items-start', center: 'items-center' } as const;
 
 const ProjectSection = ({
   title,
+  id,
   maxWidth = 'default',
   align = 'start',
   padding = 'default',
@@ -40,6 +43,7 @@ const ProjectSection = ({
   children,
 }: ProjectSectionProps) => (
   <section
+    id={id}
     className={`bg-primary-subtle ${SECTION_BASE} ${PADDING_CLASS[padding]} ${ALIGN_CLASS[align]} ${sectionClassName}`.trim()}
   >
     <div className={`mx-auto w-full min-w-0 text-left ${MAX_WIDTH_CLASS[maxWidth]}`}>
