@@ -20,13 +20,13 @@ const TechStack = () => {
                 </h3>
                 <ul className="flex flex-wrap gap-3">
                   <TechIcon iconName="typescript">TypeScript</TechIcon>
-                  <TechIcon>JavaScript</TechIcon>
+                  <TechIcon iconName="javascript">JavaScript</TechIcon>
                   <TechIcon iconName="html5">HTML5</TechIcon>
                   <TechIcon iconName="css3">CSS3</TechIcon>
                   <TechIcon iconName="tailwindcss">Tailwind CSS</TechIcon>
                   <TechIcon iconName="react">React</TechIcon>
                   <TechIcon iconName="nextjs">Next.js</TechIcon>
-                  <TechIcon>Zustand</TechIcon>
+                  <TechIcon iconName="zustand">Zustand</TechIcon>
                   <TechIcon iconName="tanstack">TanStack Query</TechIcon>
                 </ul>
               </div>
@@ -64,7 +64,7 @@ const TechStack = () => {
                 </h3>
                 <ul className="flex flex-wrap gap-3">
                   <TechIcon iconName="docker">Docker</TechIcon>
-                  <TechIcon>Nginx</TechIcon>
+                  <TechIcon iconName="nginx">Nginx</TechIcon>
                   <TechIcon iconName="ubuntu">Ubuntu</TechIcon>
                   <TechIcon iconName="aws">AWS</TechIcon>
                 </ul>
@@ -78,7 +78,7 @@ const TechStack = () => {
                 </h3>
                 <ul className="flex flex-wrap gap-3">
                   <TechIcon iconName="notion">Notion</TechIcon>
-                  <TechIcon>Discord</TechIcon>
+                  <TechIcon iconName="discord">Discord</TechIcon>
                   <TechIcon iconName="git">Git</TechIcon>
                   <TechIcon iconName="github">GitHub</TechIcon>
                 </ul>
@@ -91,7 +91,7 @@ const TechStack = () => {
                   Other Tools
                 </h3>
                 <ul className="flex flex-wrap gap-3">
-                  <TechIcon>Final Cut Pro 11</TechIcon>
+                  <TechIcon iconName="fcpx">Final Cut Pro 11</TechIcon>
                   <TechIcon iconName="ps">Adobe Photoshop</TechIcon>
                   <TechIcon iconName="figma">Figma</TechIcon>
                 </ul>
