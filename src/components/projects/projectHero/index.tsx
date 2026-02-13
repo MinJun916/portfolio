@@ -21,7 +21,7 @@ const ProjectHero = ({ projectName }: ProjectHeroProps) => {
       <AnimateInView delay={0} variant="fade-up">
         <div className="space-y-8 text-left sm:space-y-10 md:space-y-12">
           <ProjectHeroHeader title={title} logoSrc={logoSrc ?? imageSrc} links={links} />
-          <p className="text-muted-foreground max-w-[42rem] text-base leading-[1.8] sm:text-lg sm:leading-[1.8]">
+          <p className="text-foreground/80 max-w-[42rem] text-base leading-[1.8] sm:text-lg sm:leading-[1.8]">
             {subtitle ?? '—'}
           </p>
           <ProjectHeroMeta period={period} role={role} techStack={techStack} />

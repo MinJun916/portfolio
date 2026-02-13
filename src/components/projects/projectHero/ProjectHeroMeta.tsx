@@ -10,13 +10,13 @@ const ProjectHeroMeta = ({ period, role, techStack }: ProjectHeroMetaProps) => (
       <p className="text-muted-foreground mb-2 text-xs font-semibold tracking-wider uppercase sm:text-sm">
         기간
       </p>
-      <p className="text-foreground text-[15px] leading-[1.6] sm:text-base">{period}</p>
+      <p className="text-foreground/80 text-[15px] leading-[1.6] sm:text-base">{period}</p>
     </div>
     <div>
       <p className="text-muted-foreground mb-2 text-xs font-semibold tracking-wider uppercase sm:text-sm">
         역할
       </p>
-      <p className="text-foreground text-[15px] leading-[1.6] sm:text-base">{role}</p>
+      <p className="text-foreground/80 text-[15px] leading-[1.6] sm:text-base">{role}</p>
     </div>
     <div>
       <p className="text-muted-foreground mb-2.5 text-xs font-semibold tracking-wider uppercase sm:text-sm">
@@ -26,7 +26,7 @@ const ProjectHeroMeta = ({ period, role, techStack }: ProjectHeroMetaProps) => (
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="border-foreground/10 bg-primary-foreground/5 text-foreground rounded-md border px-2.5 py-1 text-[13px] leading-snug"
+            className="border-foreground/10 bg-primary-foreground/5 text-foreground/80 rounded-md border px-2.5 py-1 text-[13px] leading-snug"
           >
             {tech}
           </span>

@@ -56,7 +56,7 @@ const ProjectTechStack = ({ techStack }: ProjectTechStackProps) => {
                         {item.name}
                       </p>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-[1.75] break-keep sm:text-base sm:leading-[1.8]">
+                    <p className="text-foreground/80 text-sm leading-[1.75] break-keep sm:text-base sm:leading-[1.8]">
                       {parseBold(item.description)}
                     </p>
                   </li>
