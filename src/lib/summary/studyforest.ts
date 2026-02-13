@@ -93,4 +93,77 @@ export const STUDYFOREST_SUMMARY = {
       '또한 **초기 단계에서 데이터 구조와 협업 규칙을 명확히 정의**하는 것이 프로젝트 후반 **리스크를 크게 줄인다**는 점을 체감했습니다.',
     ],
   },
+  techStack: {
+    title: '5. 기술 스택',
+    groups: [
+      {
+        groupTitle: 'Frontend',
+        items: [
+          {
+            name: 'React (JavaScript)',
+            icon: 'react',
+            description:
+              '컴포넌트 기반 구조로 UI를 설계하고, 상태 흐름을 명확히 관리하기 위해 사용했습니다.',
+          },
+          {
+            name: 'SCSS (module.scss)',
+            icon: 'sass',
+            description:
+              '스타일 범위를 컴포넌트 단위로 제한해, 전역 충돌 없이 유지보수 가능한 구조를 만들기 위해 적용했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Backend',
+        items: [
+          {
+            name: 'Node.js / Express',
+            icon: 'expressjs',
+            description:
+              '경량 미들웨어 구조를 기반으로 API 정책을 명확히 설계하고, 빠른 기능 구현이 가능하도록 선택했습니다.',
+          },
+          {
+            name: 'Prisma ORM',
+            icon: 'prisma',
+            description:
+              '스키마 기반 데이터 모델링을 통해 ERD 설계를 코드로 명확히 관리하고, 타입 안정성을 확보하기 위해 도입했습니다.',
+          },
+          {
+            name: 'PostgreSQL',
+            icon: 'postgresql',
+            description:
+              '관계형 데이터 구조를 명확히 정의하고, 학습 기록·포인트·스터디 간 관계를 안정적으로 관리하기 위해 사용했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Deployment',
+        items: [
+          {
+            name: 'Vercel (Frontend)',
+            icon: 'vercel',
+            description:
+              'React 기반 프론트엔드 배포에 최적화된 환경으로, 빠른 빌드 및 배포 반복을 위해 선택했습니다.',
+          },
+          {
+            name: 'Render (Backend)',
+            icon: 'render',
+            description:
+              'Node 기반 서버를 간편하게 운영할 수 있는 환경으로, 초기 프로젝트 규모에 적합하다고 판단해 사용했습니다.',
+          },
+        ],
+      },
+      {
+        groupTitle: 'Collaboration & Quality',
+        items: [
+          {
+            name: 'ESLint / Prettier',
+            icon: 'eslint',
+            description:
+              '팀 전체 코드 컨벤션을 통일하고, 코드 리뷰 시 불필요한 스타일 논쟁을 줄이기 위해 도입했습니다.',
+          },
+        ],
+      },
+    ],
+  },
 };
