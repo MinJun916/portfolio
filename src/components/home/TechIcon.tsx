@@ -1,4 +1,5 @@
 import StackIcon from 'tech-stack-icons';
+
 import type { IconName } from 'tech-stack-icons';
 
 type TechIconProps = {

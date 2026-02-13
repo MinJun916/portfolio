@@ -1,10 +1,12 @@
 'use client';
 
+import { ChevronRight, Github, Globe, Server, type LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, Github, Globe, Server, type LucideIcon } from 'lucide-react';
-import type { ProjectLink, ProjectCardProps } from '@/types/projects';
+
 import KeywordChip from '@/components/home/KeywordChip';
+
+import type { ProjectLink, ProjectCardProps } from '@/types/projects';
 
 const linkConfig: Record<
   ProjectLink['type'],

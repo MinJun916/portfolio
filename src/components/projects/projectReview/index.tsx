@@ -1,6 +1,6 @@
-import { parseBold } from '@/lib/parseBold';
-import AnimateInView from '@/components/shared/AnimateInView';
 import ProjectSection from '@/components/projects/ProjectSection';
+import AnimateInView from '@/components/shared/AnimateInView';
+import { parseBold } from '@/lib/parseBold';
 
 export type ProjectReviewProps = {
   review: { title: string; detail: string[] };

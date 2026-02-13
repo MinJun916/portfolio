@@ -42,9 +42,7 @@ const ProjectSection = ({
   <section
     className={`bg-primary-subtle ${SECTION_BASE} ${PADDING_CLASS[padding]} ${ALIGN_CLASS[align]} ${sectionClassName}`.trim()}
   >
-    <div
-      className={`mx-auto w-full min-w-0 text-left ${maxWidth === 'narrow' ? 'max-w-[42rem]' : PROJECT_CONTENT_MAX_WIDTH_CLASS}`}
-    >
+    <div className={`mx-auto w-full min-w-0 text-left ${MAX_WIDTH_CLASS[maxWidth]}`}>
       {title != null && (
         <h2 className={`${TITLE_BASE} mb-6 sm:mb-8 ${titleClassName}`.trim()}>{title}</h2>
       )}

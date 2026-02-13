@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { Github, Globe, Server } from 'lucide-react';
+import Image from 'next/image';
+
 import type { ProjectLink } from '@/types/projects';
 
 const linkConfig: Record<ProjectLink['type'], { label: string; icon: typeof Github }> = {

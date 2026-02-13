@@ -1,7 +1,8 @@
-import { parseBold } from '@/lib/parseBold';
-import AnimateInView from '@/components/shared/AnimateInView';
-import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from '../constants';
 import ProjectSection from '@/components/projects/ProjectSection';
+import AnimateInView from '@/components/shared/AnimateInView';
+import { parseBold } from '@/lib/parseBold';
+
+import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from '../constants';
 
 export type TroubleShootingSection = {
   title: string;

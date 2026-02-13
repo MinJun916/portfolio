@@ -1,6 +1,7 @@
 'use client';
 
 import { GithubOutlined, MailOutlined } from '@ant-design/icons';
+
 import AnimateInView from '@/components/shared/AnimateInView';
 import { showToast } from '@/components/shared/Sonner';
 

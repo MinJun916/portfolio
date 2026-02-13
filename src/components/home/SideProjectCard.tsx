@@ -1,4 +1,5 @@
 import { Github } from 'lucide-react';
+
 import type { SideProjectCardProps } from '@/types/projects';
 
 const SideProjectCard = ({ title, description, techStack, repository }: SideProjectCardProps) => {

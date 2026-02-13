@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import StackIcon from 'tech-stack-icons';
+
 import type { IconName } from 'tech-stack-icons';
 
 /** 라이브러리 없음, public 커스텀 SVG 경로 */

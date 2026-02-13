@@ -1,10 +1,10 @@
+import ProjectContribution from '@/components/projects/projectContribution';
+import ProjectFooter from '@/components/projects/projectFooter';
 import ProjectHero from '@/components/projects/projectHero';
 import ProjectOverview from '@/components/projects/projectOverview';
-import ProjectContribution from '@/components/projects/projectContribution';
-import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting';
 import ProjectReview from '@/components/projects/projectReview';
 import ProjectTechStack from '@/components/projects/projectTechStack';
-import ProjectFooter from '@/components/projects/projectFooter';
+import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting';
 import { MOVING_SUMMARY } from '@/lib/summary/moving';
 
 const ProjectMovingPage = () => (

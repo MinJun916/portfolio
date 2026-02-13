@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+
 import AnimateInView from '@/components/shared/AnimateInView';
+
 import { PROJECT_CONTENT_MAX_WIDTH_CLASS } from '../constants';
 
 const ProjectFooter = () => (

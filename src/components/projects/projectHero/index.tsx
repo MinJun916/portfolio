@@ -1,9 +1,10 @@
-import { projectLists } from '@/lib/projectLists';
 import AnimateInView from '@/components/shared/AnimateInView';
-import ProjectHeroSection from './ProjectHeroSection';
+import { projectLists } from '@/lib/projectLists';
+
 import ProjectHeroHeader from './ProjectHeroHeader';
-import ProjectHeroMeta from './ProjectHeroMeta';
 import ProjectHeroImage from './ProjectHeroImage';
+import ProjectHeroMeta from './ProjectHeroMeta';
+import ProjectHeroSection from './ProjectHeroSection';
 
 type ProjectHeroProps = {
   projectName: string;

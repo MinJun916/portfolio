@@ -3,9 +3,10 @@
 import { GithubOutlined, MailOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Separator } from '@/components/ui/separator';
-import { showToast } from '@/components/shared/Sonner';
 import { useState } from 'react';
+
+import { showToast } from '@/components/shared/Sonner';
+import { Separator } from '@/components/ui/separator';
 
 const EMAIL = 'ed125248@gmail.com';
 

@@ -1,9 +1,9 @@
-import Hero from '@/components/home/Hero';
 import About from '@/components/home/About';
-import TechStack from '@/components/home/TechStack';
 import Experience from '@/components/home/Experience';
-import Projects from '@/components/home/Projects';
 import Footer from '@/components/home/Footer';
+import Hero from '@/components/home/Hero';
+import Projects from '@/components/home/Projects';
+import TechStack from '@/components/home/TechStack';
 
 const HomePage = () => {
   return (
