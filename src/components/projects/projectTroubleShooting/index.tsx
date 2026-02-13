@@ -105,15 +105,13 @@ const TroubleShootingZigzagCase = ({
             key={i}
             className={`flex w-full min-w-0 justify-start ${!isLeft ? 'sm:justify-end' : ''}`}
           >
-            <article
-              className={`border-primary/30 bg-primary relative w-full max-w-[42rem] min-w-0 rounded-xl border p-5 sm:p-6 ${isLeft ? 'text-left' : 'text-right'}`}
-            >
-              <h4 className="text-foreground mb-3 text-base font-semibold tracking-tight sm:mb-4 sm:text-lg">
+            <article className="border-primary/30 bg-primary relative w-full max-w-[42rem] min-w-0 rounded-xl border p-5 text-left sm:p-6">
+              <h4
+                className={`text-foreground mb-3 text-base font-semibold tracking-tight sm:mb-4 sm:text-lg ${!isLeft ? 'sm:text-right' : ''}`}
+              >
                 {block.title}
               </h4>
-              <div className={!isLeft ? 'sm:flex sm:flex-col sm:items-end' : ''}>
-                <BlockContent block={block} align={isLeft ? 'left' : 'right'} />
-              </div>
+              <BlockContent block={block} align="left" />
             </article>
           </div>
         );
