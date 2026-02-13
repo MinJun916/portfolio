@@ -1,3 +1,6 @@
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+
 const Hero = () => {
   return (
     <section className="bg-primary flex min-h-[calc(100vh-3.5rem)] flex-shrink-0 snap-start flex-col items-center justify-center px-4 py-12 sm:min-h-[calc(100vh-4rem)] sm:px-6 sm:py-20">
@@ -25,6 +28,15 @@ const Hero = () => {
         >
           &ldquo;문제의 본질을 이해하고, <br /> 운영까지 고려해 설계하는 개발자입니다.&rdquo;
         </p>
+
+        <Link
+          href="/projects"
+          className="hero-fade-in text-foreground hover:border-foreground/15 border-foreground/[0.08] mt-2 inline-flex items-center gap-1.5 rounded-xl border bg-white/90 px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:gap-2 sm:px-5 sm:py-3 sm:text-base"
+          style={{ animationDelay: '0.5s' }}
+        >
+          전체 프로젝트 보기
+          <ChevronRight className="size-4 shrink-0 sm:size-4.5" />
+        </Link>
       </div>
     </section>
   );
