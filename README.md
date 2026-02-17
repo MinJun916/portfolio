@@ -16,23 +16,25 @@
 
 ## 로컬 실행
 
+이 프로젝트는 **pnpm**을 패키지 매니저로 사용합니다.
+
 ```bash
 # 의존성 설치
-npm install
+pnpm install
 
 # 개발 서버 (http://localhost:3000)
-npm run dev
+pnpm dev
 ```
 
 ## 스크립트
 
-| 명령어           | 설명               |
-| ---------------- | ------------------ |
-| `npm run dev`    | 개발 서버 실행     |
-| `npm run build`  | 프로덕션 빌드      |
-| `npm run start`  | 빌드 결과물 실행   |
-| `npm run lint`   | ESLint 실행        |
-| `npm run format` | Prettier 포맷 적용 |
+| 명령어        | 설명               |
+| ------------- | ------------------ |
+| `pnpm dev`    | 개발 서버 실행     |
+| `pnpm build`  | 프로덕션 빌드      |
+| `pnpm start`  | 빌드 결과물 실행   |
+| `pnpm lint`   | ESLint 실행        |
+| `pnpm format` | Prettier 포맷 적용 |
 
 ## 프로젝트 구조 (요약)
 
@@ -45,3 +47,7 @@ src/
 ```
 
 배포는 Vercel 등 Next.js 호환 플랫폼에서 빌드 후 배포하면 됩니다.
+
+---
+
+© 2026 MinJun Shin. All rights reserved.
