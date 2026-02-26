@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { parseBold } from '@/lib/parseBold';
 import { getEtcProjectBySlug } from '@/lib/projectLists';
 
 import type { Metadata } from 'next';
@@ -75,15 +76,20 @@ const EtcProjectPage = async ({ params }: Props) => {
                   <div className="mb-8 ml-12">
                     <div className="border-border/60 bg-primary/20 rounded-lg border shadow-sm">
                       <div className="p-6">
-                        {entry.date && (
-                          <span className="text-muted-foreground mb-3 block text-xs font-medium sm:text-sm">
-                            {entry.date}
-                          </span>
+                        {(entry.date || entry.title) && (
+                          <div className="text-muted-foreground mb-3 space-y-0.5 text-xs font-medium sm:text-sm">
+                            {entry.date && <span className="block">{entry.date}</span>}
+                            {entry.title && (
+                              <span className="text-foreground/90 block font-semibold sm:text-sm">
+                                {entry.title}
+                              </span>
+                            )}
+                          </div>
                         )}
                         <div className="text-foreground space-y-2 text-sm leading-relaxed sm:text-base">
-                          <p>{entry.reason}</p>
-                          <p>{entry.action}</p>
-                          <p>{entry.result}</p>
+                          <p>{parseBold(entry.reason)}</p>
+                          <p>{parseBold(entry.action)}</p>
+                          {entry.result ? <p>{parseBold(entry.result)}</p> : null}
                         </div>
                       </div>
                     </div>
