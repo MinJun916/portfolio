@@ -5,7 +5,7 @@ import Footer from '@/components/home/Footer';
 import ProjectCard from '@/components/home/ProjectCard';
 import SideProjectCard from '@/components/home/SideProjectCard';
 import AnimateInView from '@/components/shared/AnimateInView';
-import { projectLists, sideProjectLists } from '@/lib/projectLists';
+import { etcProjectLists, projectLists, sideProjectLists } from '@/lib/projectLists';
 
 const ProjectsLandingPage = () => {
   return (
@@ -46,11 +46,36 @@ const ProjectsLandingPage = () => {
 
           <AnimateInView delay={0}>
             <div className="flex flex-col gap-6 sm:gap-8">
-              <h2 className="text-foreground text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
-                Side Project
-              </h2>
+              <div className="flex flex-col gap-1">
+                <h2 className="text-foreground text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
+                  Side Project
+                </h2>
+                <p className="text-foreground/80 text-sm leading-relaxed sm:text-base">
+                  새로운 도전을 위해 진행한 사이드 프로젝트입니다.
+                </p>
+              </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
                 {sideProjectLists.map((project, i) => (
+                  <AnimateInView key={project.title} delay={80 + i * 80}>
+                    <SideProjectCard {...project} />
+                  </AnimateInView>
+                ))}
+              </div>
+            </div>
+          </AnimateInView>
+
+          <AnimateInView delay={0}>
+            <div className="flex flex-col gap-6 sm:gap-8">
+              <div className="flex flex-col gap-1">
+                <h2 className="text-foreground text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
+                  Etc...
+                </h2>
+                <p className="text-foreground/80 text-sm leading-relaxed sm:text-base">
+                  그 외 참여·실험한 프로젝트나 도구입니다.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                {etcProjectLists.map((project, i) => (
                   <AnimateInView key={project.title} delay={80 + i * 80}>
                     <SideProjectCard {...project} />
                   </AnimateInView>

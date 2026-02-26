@@ -87,3 +87,12 @@ export const sideProjectLists: SideProjectCardProps[] = [
     repository: 'https://github.com/MinJun916/portfolio',
   },
 ];
+
+export const etcProjectLists: SideProjectCardProps[] = [
+  {
+    title: 'OpenClaw',
+    description: 'OpenClaw 관련 프로젝트입니다. 상세 내용은 추후 업데이트 예정입니다.',
+    techStack: [],
+    repository: '#',
+  },
+];
