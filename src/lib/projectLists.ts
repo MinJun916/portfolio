@@ -88,11 +88,18 @@ export const sideProjectLists: SideProjectCardProps[] = [
   },
 ];
 
-export const etcProjectLists: SideProjectCardProps[] = [
+export type EtcProjectItem = SideProjectCardProps & { slug: string };
+
+export const etcProjectLists: EtcProjectItem[] = [
   {
+    slug: 'openclaw',
     title: 'OpenClaw',
     description: 'OpenClaw 관련 프로젝트입니다. 상세 내용은 추후 업데이트 예정입니다.',
     techStack: [],
-    repository: '#',
+    repository: 'https://github.com/openclaw/openclaw',
+    href: '/projects/etc/openclaw',
   },
 ];
+
+export const getEtcProjectBySlug = (slug: string): EtcProjectItem | undefined =>
+  etcProjectLists.find((p) => p.slug === slug);

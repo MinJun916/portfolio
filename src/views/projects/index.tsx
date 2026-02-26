@@ -71,15 +71,19 @@ const ProjectsLandingPage = () => {
                   Etc...
                 </h2>
                 <p className="text-foreground/80 text-sm leading-relaxed sm:text-base">
-                  그 외 참여·실험한 프로젝트나 도구입니다.
+                  그 외 참여·실험한 프로젝트나 도구입니다. 카드를 클릭하면 상세 내용을 볼 수
+                  있습니다.
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                {etcProjectLists.map((project, i) => (
-                  <AnimateInView key={project.title} delay={80 + i * 80}>
-                    <SideProjectCard {...project} />
-                  </AnimateInView>
-                ))}
+                {etcProjectLists.map((project, i) => {
+                  const { slug: _slug, ...cardProps } = project;
+                  return (
+                    <AnimateInView key={project.title} delay={80 + i * 80}>
+                      <SideProjectCard {...cardProps} />
+                    </AnimateInView>
+                  );
+                })}
               </div>
             </div>
           </AnimateInView>
