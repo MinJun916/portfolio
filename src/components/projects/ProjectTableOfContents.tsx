@@ -16,7 +16,7 @@ const ProjectTableOfContents = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  if (pathname === '/projects') return null;
+  if (pathname === '/projects' || pathname.startsWith('/projects/etc')) return null;
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
