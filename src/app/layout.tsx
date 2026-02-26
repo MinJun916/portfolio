@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import localFont from 'next/font/local';
 
 import Header from '@/components/shared/Header';
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
