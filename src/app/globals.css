@@ -52,6 +52,7 @@
   --color-primary-subtle: #f8f6f4;
 }
 
+/* print-export: 스크롤 스냅 임시 비활성화 (PDF/인쇄 시 레이아웃 이슈 방지) — 복구 시 주석 해제
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -67,6 +68,7 @@ html {
     scroll-padding-top: 4rem;
   }
 }
+*/
 
 body {
   font-family: var(--font-pretendard);
