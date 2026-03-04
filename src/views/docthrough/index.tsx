@@ -9,7 +9,7 @@ import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting
 import { DOCTHROUGH_SUMMARY } from '@/lib/summary/docthrough';
 
 const ProjectDocthroughPage = () => (
-  <>
+  <div className="project-detail-page">
     <ProjectHero projectName="docthrough" />
     <ProjectOverview overview={DOCTHROUGH_SUMMARY.overview} />
     <ProjectContribution contribution={DOCTHROUGH_SUMMARY.contribution} />
@@ -18,7 +18,7 @@ const ProjectDocthroughPage = () => (
     <ProjectPeerReview projectName="docthrough" />
     <ProjectTechStack techStack={DOCTHROUGH_SUMMARY.techStack} />
     <ProjectFooter />
-  </>
+  </div>
 );
 
 export default ProjectDocthroughPage;

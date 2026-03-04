@@ -26,7 +26,7 @@ const ProjectTableOfContents = () => {
 
   return (
     <div
-      className="fixed top-[33.333dvh] right-3 z-40 -translate-y-1/2 sm:right-5"
+      className="no-print fixed top-[33.333dvh] right-3 z-40 -translate-y-1/2 sm:right-5"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >

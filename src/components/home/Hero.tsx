@@ -31,7 +31,7 @@ const Hero = () => {
 
         <Link
           href="/projects"
-          className="hero-fade-in text-foreground hover:border-foreground/15 border-foreground/[0.08] mt-2 inline-flex items-center gap-1.5 rounded-xl border bg-white/90 px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:gap-2 sm:px-5 sm:py-3 sm:text-base"
+          className="no-print hero-fade-in text-foreground hover:border-foreground/15 border-foreground/[0.08] mt-2 inline-flex items-center gap-1.5 rounded-xl border bg-white/90 px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:gap-2 sm:px-5 sm:py-3 sm:text-base"
           style={{ animationDelay: '0.5s' }}
         >
           전체 프로젝트 보기

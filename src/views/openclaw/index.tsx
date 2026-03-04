@@ -77,7 +77,7 @@ const ProjectOpenClawPage = () => {
 
         <Link
           href="/projects"
-          className="text-foreground hover:border-foreground/15 border-foreground/[0.08] inline-flex w-fit items-center gap-2 rounded-xl border bg-white/90 px-5 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+          className="no-print text-foreground hover:border-foreground/15 border-foreground/[0.08] inline-flex w-fit items-center gap-2 rounded-xl border bg-white/90 px-5 py-2.5 text-sm font-medium shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
         >
           프로젝트 목록으로
         </Link>

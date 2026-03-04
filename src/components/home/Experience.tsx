@@ -76,7 +76,7 @@ const EXPERIENCE_DATA: TimelineItemData[] = [
 
 const Experience = () => {
   return (
-    <section className="w-full flex-shrink-0 snap-start">
+    <section className="experience-section w-full flex-shrink-0 snap-start" aria-label="Experience">
       <div className="mx-auto w-full max-w-[1200px] px-4 py-10 sm:px-6 sm:py-16 md:px-10">
         <div className="mx-auto max-w-3xl">
           <AnimateInView delay={0}>

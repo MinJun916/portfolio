@@ -87,14 +87,14 @@ const SideProjectCard = ({
 
   if (href) {
     return (
-      <Link href={href} className={`block ${linkClass}`}>
+      <Link href={href} className={`project-card block ${linkClass}`}>
         {cardContent(title, description, techStack, repository, true)}
       </Link>
     );
   }
 
   return (
-    <article className={baseClass}>
+    <article className={`project-card ${baseClass}`}>
       {cardContent(title, description, techStack, repository, false)}
     </article>
   );

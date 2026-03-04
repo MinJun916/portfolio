@@ -9,7 +9,7 @@ import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting
 import { STUDYFOREST_SUMMARY } from '@/lib/summary/studyforest';
 
 const ProjectStudyforestPage = () => (
-  <>
+  <div className="project-detail-page">
     <ProjectHero projectName="studyforest" />
     <ProjectOverview overview={STUDYFOREST_SUMMARY.overview} />
     <ProjectContribution contribution={STUDYFOREST_SUMMARY.contribution} />
@@ -18,7 +18,7 @@ const ProjectStudyforestPage = () => (
     <ProjectPeerReview projectName="studyforest" />
     <ProjectTechStack techStack={STUDYFOREST_SUMMARY.techStack} />
     <ProjectFooter />
-  </>
+  </div>
 );
 
 export default ProjectStudyforestPage;

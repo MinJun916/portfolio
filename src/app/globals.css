@@ -1,5 +1,7 @@
 @import 'tailwindcss';
+/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 @import 'tw-animate-css';
+*/
 @import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
@@ -52,24 +54,23 @@
   --color-primary-subtle: #f8f6f4;
 }
 
+/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; /* 데스크톱: 애플처럼 섹션마다 딱 걸리는 스냅 */
-  scroll-padding-top: 3.5rem; /* 모바일 헤더 높이 */
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 3.5rem;
 }
-
-/* 모바일(터치): 스냅 완화 - 가까울 때만 스냅되어 읽기 편함 */
 @media (pointer: coarse) {
   html {
     scroll-snap-type: y proximity;
   }
 }
-
 @media (min-width: 640px) {
   html {
-    scroll-padding-top: 4rem; /* sm 이상 헤더 h-16 */
+    scroll-padding-top: 4rem;
   }
 }
+*/
 
 body {
   font-family: var(--font-pretendard);
@@ -156,6 +157,7 @@ body {
   }
 }
 
+/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 @keyframes hero-fade-in {
   from {
     opacity: 0;
@@ -172,7 +174,6 @@ body {
   opacity: 0;
 }
 
-/* 스크롤 등장 애니메이션 (AnimateInView와 함께 사용) */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -213,4 +214,307 @@ body {
 
 .animate-in-view-fade.in-view {
   opacity: 1;
+}
+*/
+/* PDF용: 애니메이션 비활성화 시 요소가 바로 보이도록 — 복구 시 이 블록 삭제 */
+.hero-fade-in,
+.animate-in-view,
+.animate-in-view-fade,
+.animate-in-view.in-view,
+.animate-in-view-fade.in-view {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ========== PDF 출력물(A4) 완성도 — 인쇄 시에만 적용 ========== */
+@media print {
+  @page {
+    margin: 20mm;
+  }
+
+  /* PDF 한글 깨짐 방지: 인쇄용 폰트 고정 */
+  * {
+    font-family: sans-serif !important;
+  }
+
+  /* 텍스트 자간·줄바꿈 고정(글자 겹침 방지) */
+  * {
+    letter-spacing: normal !important;
+    word-break: keep-all !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 인쇄 시 잘림 방지: 루트부터 overflow·height 제한 해제 */
+  html,
+  body {
+    overflow: visible !important;
+    min-height: auto !important;
+  }
+
+  main,
+  section,
+  article,
+  div {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* 헤더(상단 네비게이션) 제거 — 문서 형태 */
+  body > header,
+  header[class*='sticky'],
+  .no-print {
+    display: none !important;
+  }
+
+  /* 배경 이미지 제거, 배경색 흰색 고정 */
+  * {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  body,
+  main,
+  section,
+  article,
+  header,
+  footer,
+  div {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body,
+  p,
+  span,
+  li,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  td,
+  th,
+  label {
+    color: #000000 !important;
+  }
+
+  /* 제목 폰트 무게 강화 — 가독성 */
+  h1,
+  h2,
+  h3 {
+    font-weight: 700 !important;
+  }
+
+  /* 이미지 강제 출력 */
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  img {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 데스크탑 레이아웃 유지(1200px 기준) — 모바일 뷰 방지 */
+  body {
+    min-width: 1200px !important;
+  }
+
+  /* 카드·섹션 얇은 테두리 */
+  section,
+  article,
+  [class*='rounded-lg'][class*='border'],
+  [class*='rounded-xl'][class*='border'] {
+    border: 1px solid #ddd !important;
+  }
+
+  /* 제목·본문 잘림 방지(인쇄 시) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  /* ----- 명확한 섹션 분리 (A4 기준) ----- */
+  /* 각 section이 새 페이지에서 시작, 섹션 중간에서 끊기지 않도록 */
+  section {
+    break-before: page;
+    page-break-before: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* ----- 여백·패딩 최적화 (한 페이지에 꽉 차게) ----- */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  main > section + section {
+    margin-top: 0 !important;
+  }
+
+  /* ----- Experience: 인쇄 시 각 항목(경력 카드)이 페이지 경계에서 잘리지 않도록 ----- */
+  section.experience-section .max-w-3xl .relative > .group {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* ----- /projects/[slug] 상세 페이지 (moving, docthrough, studyforest) 인쇄·PDF ----- */
+  .project-detail-page section {
+    min-height: 0 !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* 한 섹션 = 새 페이지에서 시작 (섹션 내부는 카드 단위로 나눔 허용) */
+  .project-detail-page section[id^='section-'] {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* 표지(히어로) 다음에 무조건 새 페이지 → 개요는 2페이지에서 시작 */
+  .project-detail-page .project-detail-cover {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  /* 기여·트러블슈팅 등 카드 단위로 페이지 끊기 (한 카드 = 한 페이지) */
+  .project-detail-page section#section-contribution article,
+  .project-detail-page section#section-trouble-shooting article {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .project-detail-page section#section-contribution article:first-of-type,
+  .project-detail-page section#section-trouble-shooting article:first-of-type {
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+
+  /* 트러블슈팅 그리드 인쇄 시 1열로 쌓아서 카드별 페이지 나눔 적용 */
+  .project-detail-page section#section-trouble-shooting [class*='grid-cols'] {
+    display: block !important;
+  }
+
+  .project-detail-page section#section-trouble-shooting [class*='grid-cols'] > * {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .project-detail-page footer {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .project-detail-page img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* ----- /projects (프로젝트 리스트) 페이지: 3페이지 구성 ----- */
+  /* 1페이지: Projects 제목 + 카드 3개 / 2페이지: Side Project + Etc / 3페이지: Footer */
+  .projects-list-page .project-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 첫 페이지: 제목 + 카드 3개가 한 페이지에 들어가도록 카드 높이 축소 */
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card .bg-muted.relative,
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card [class*='aspect-'] {
+    height: 72px !important;
+    min-height: 72px !important;
+    max-height: 72px !important;
+    aspect-ratio: unset !important;
+  }
+
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card .bg-muted.relative img,
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card [class*='aspect-'] img {
+    max-height: 72px !important;
+    height: 72px !important;
+    object-fit: contain !important;
+  }
+
+  .projects-list-page .mx-auto > .grid:nth-child(2) .project-card > div > div:last-of-type {
+    padding: 6px 8px !important;
+    gap: 4px !important;
+  }
+
+  /* 첫 그리드: 간격·높이 축소 후 다음 페이지로 */
+  .projects-list-page .mx-auto > .grid:nth-child(2) {
+    gap: 0.5rem !important;
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  /* 2페이지: Side Project + Etc를 A4 세로·가로 중앙에 배치 */
+  .projects-list-page-section-2 {
+    min-height: 257mm !important; /* A4 297mm - 상하 여백 20mm×2 */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 90% !important;
+    width: 100% !important;
+  }
+
+  /* Footer는 항상 새 페이지에서 시작 */
+  .projects-list-page + footer {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* ----- Major Projects: 카드 높이 조정(한 페이지에 들어가도록) ----- */
+  section#projects .grid {
+    gap: 0.5rem !important;
+  }
+
+  section#projects .grid > *,
+  section#projects .grid > * > a,
+  section#projects .grid a[href*='/projects/'] {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  section#projects .grid [class*='aspect-'] {
+    aspect-ratio: 2 / 1 !important;
+    max-height: 120px !important;
+  }
+
+  section#projects .grid [class*='rounded-lg'] > div {
+    padding: 0.35rem !important;
+  }
 }

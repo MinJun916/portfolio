@@ -54,7 +54,7 @@ const ProjectCard = ({
   return (
     <Link
       href={href}
-      className="border-border bg-card group hover:border-foreground/20 focus-visible:ring-ring relative flex h-full min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out outline-none hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 active:translate-y-0 active:scale-[0.99] active:shadow-sm sm:min-h-[500px] md:min-h-[560px]"
+      className="project-card border-border bg-card group hover:border-foreground/20 focus-visible:ring-ring relative flex h-full min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-lg border shadow-sm transition-all duration-200 ease-out outline-none hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 active:translate-y-0 active:scale-[0.99] active:shadow-sm sm:min-h-[500px] md:min-h-[560px]"
       aria-label={`${title} 상세 보기`}
     >
       <div className="flex min-h-full flex-1 flex-col">
@@ -150,7 +150,7 @@ const ProjectCard = ({
             ))}
           </div>
 
-          <p className="text-muted-foreground group-hover:text-foreground mt-3 flex items-center gap-1 text-xs font-medium transition-colors sm:mt-4 sm:text-sm">
+          <p className="no-print text-muted-foreground group-hover:text-foreground mt-3 flex items-center gap-1 text-xs font-medium transition-colors sm:mt-4 sm:text-sm">
             상세 보기
             <ChevronRight className="size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 sm:size-4" />
           </p>

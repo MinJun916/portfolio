@@ -9,7 +9,7 @@ import ProjectTroubleShooting from '@/components/projects/projectTroubleShooting
 import { MOVING_SUMMARY } from '@/lib/summary/moving';
 
 const ProjectMovingPage = () => (
-  <>
+  <div className="project-detail-page">
     <ProjectHero projectName="moving" />
     <ProjectOverview overview={MOVING_SUMMARY.overview} />
     <ProjectContribution contribution={MOVING_SUMMARY.contribution} />
@@ -18,7 +18,7 @@ const ProjectMovingPage = () => (
     <ProjectPeerReview projectName="moving" />
     <ProjectTechStack techStack={MOVING_SUMMARY.techStack} />
     <ProjectFooter />
-  </>
+  </div>
 );
 
 export default ProjectMovingPage;
