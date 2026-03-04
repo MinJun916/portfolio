@@ -1,7 +1,5 @@
 @import 'tailwindcss';
-/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 @import 'tw-animate-css';
-*/
 @import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
@@ -54,7 +52,6 @@
   --color-primary-subtle: #f8f6f4;
 }
 
-/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -70,7 +67,6 @@ html {
     scroll-padding-top: 4rem;
   }
 }
-*/
 
 body {
   font-family: var(--font-pretendard);
@@ -157,7 +153,6 @@ body {
   }
 }
 
-/* PDF 변환용 임시 비활성화 — 복구 시 주석 해제
 @keyframes hero-fade-in {
   from {
     opacity: 0;
@@ -215,13 +210,13 @@ body {
 .animate-in-view-fade.in-view {
   opacity: 1;
 }
-*/
-/* PDF용: 애니메이션 비활성화 시 요소가 바로 보이도록 — 복구 시 이 블록 삭제 */
-.hero-fade-in,
-.animate-in-view,
-.animate-in-view-fade,
-.animate-in-view.in-view,
-.animate-in-view-fade.in-view {
+
+/* 헤더 토글로 애니메이션 끄면(body.animations-off) 요소가 바로 보이도록 */
+body.animations-off .hero-fade-in,
+body.animations-off .animate-in-view,
+body.animations-off .animate-in-view-fade,
+body.animations-off .animate-in-view.in-view,
+body.animations-off .animate-in-view-fade.in-view {
   opacity: 1 !important;
   transform: none !important;
 }
@@ -230,6 +225,16 @@ body {
 @media print {
   @page {
     margin: 20mm;
+  }
+
+  /* 인쇄 시 애니메이션 요소 즉시 표시 */
+  .hero-fade-in,
+  .animate-in-view,
+  .animate-in-view-fade,
+  .animate-in-view.in-view,
+  .animate-in-view-fade.in-view {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   /* PDF 한글 깨짐 방지: 인쇄용 폰트 고정 */

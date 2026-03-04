@@ -56,11 +56,11 @@ const ProjectsLandingPage = () => {
                   </p>
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                {sideProjectLists.map((project, i) => (
-                  <AnimateInView key={project.title} delay={80 + i * 80}>
-                    <SideProjectCard {...project} />
-                  </AnimateInView>
-                ))}
+                  {sideProjectLists.map((project, i) => (
+                    <AnimateInView key={project.title} delay={80 + i * 80}>
+                      <SideProjectCard {...project} />
+                    </AnimateInView>
+                  ))}
                 </div>
               </div>
             </AnimateInView>
@@ -78,7 +78,9 @@ const ProjectsLandingPage = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
                   {etcProjectLists.map((project, i) => {
-                    const { slug: _slug, ...cardProps } = project;
+                    // slug는 SideProjectCard에 넘기지 않음
+                    const { slug, ...cardProps } = project;
+                    void slug;
                     return (
                       <AnimateInView key={project.title} delay={80 + i * 80}>
                         <SideProjectCard {...cardProps} />

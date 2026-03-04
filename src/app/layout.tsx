@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import localFont from 'next/font/local';
 
+import AnimationBodyClass from '@/components/shared/AnimationBodyClass';
 import Header from '@/components/shared/Header';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.className} antialiased`}>
+        <AnimationBodyClass />
         <Header />
         {children}
         <Toaster />

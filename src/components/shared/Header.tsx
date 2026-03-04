@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
+import AnimationToggle from '@/components/shared/AnimationToggle';
 import { showToast } from '@/components/shared/Sonner';
 import { Separator } from '@/components/ui/separator';
 
@@ -86,6 +87,10 @@ const Header = () => {
               <div className="h-5">
                 <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
               </div>
+              <AnimationToggle />
+              <div className="h-5">
+                <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
+              </div>
               <IconLinks />
             </nav>
             <button
@@ -117,6 +122,10 @@ const Header = () => {
                 </div>
               </>
             )}
+            <AnimationToggle />
+            <div className="h-5">
+              <Separator orientation="vertical" className="bg-muted-foreground/40 h-full" />
+            </div>
             <IconLinks />
           </div>
         )}
@@ -137,7 +146,8 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <div className="border-border/60 mt-3 flex items-center gap-4 border-t pt-3">
+          <div className="border-border/60 mt-3 flex flex-wrap items-center gap-4 border-t pt-3">
+            <AnimationToggle showLabel />
             <a
               href="https://github.com/MinJun916"
               target="_blank"

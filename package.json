@@ -22,7 +22,8 @@
     "react-dom": "19.2.3",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
-    "tech-stack-icons": "^3.5.8"
+    "tech-stack-icons": "^3.5.8",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
